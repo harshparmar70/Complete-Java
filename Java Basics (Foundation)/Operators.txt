@@ -1,0 +1,223 @@
+## 🔷 Operators in Java (Complete + Exam-Ready)
+
+### 📌 Definition
+
+**Operators** are symbols used to **perform operations on variables and values**.
+
+👉 Example:
+
+```java
+int c = a + b;
+```
+
+Here `+` is an operator.
+
+---
+
+# 🧩 Types of Operators in Java
+
+---
+
+## 1️⃣ Arithmetic Operators
+
+👉 Used for mathematical operations
+
+| Operator | Meaning             | Example |
+| -------- | ------------------- | ------- |
+| `+`      | Addition            | `a + b` |
+| `-`      | Subtraction         | `a - b` |
+| `*`      | Multiplication      | `a * b` |
+| `/`      | Division            | `a / b` |
+| `%`      | Modulus (remainder) | `a % b` |
+
+```java
+int a = 10, b = 3;
+System.out.println(a + b); // 13
+System.out.println(a % b); // 1
+```
+
+---
+
+## 2️⃣ Relational (Comparison) Operators
+
+👉 Used to compare values → result is **true/false**
+
+| Operator | Meaning          |
+| -------- | ---------------- |
+| `==`     | Equal to         |
+| `!=`     | Not equal        |
+| `>`      | Greater than     |
+| `<`      | Less than        |
+| `>=`     | Greater or equal |
+| `<=`     | Less or equal    |
+
+```java
+System.out.println(10 > 5); // true
+```
+
+---
+
+## 3️⃣ Logical Operators
+
+👉 Used with boolean values
+
+| Operator | Meaning |   |    |
+| -------- | ------- | - | -- |
+| `&&`     | AND     |   |    |
+| `        |         | ` | OR |
+| `!`      | NOT     |   |    |
+
+```java
+boolean x = true, y = false;
+System.out.println(x && y); // false
+```
+
+---
+
+## 4️⃣ Assignment Operators
+
+👉 Used to assign values
+
+| Operator | Example  | Meaning   |
+| -------- | -------- | --------- |
+| `=`      | `a = 5`  | Assign    |
+| `+=`     | `a += 2` | a = a + 2 |
+| `-=`     | `a -= 2` | a = a - 2 |
+| `*=`     | `a *= 2` | a = a * 2 |
+| `/=`     | `a /= 2` | a = a / 2 |
+
+---
+
+## 5️⃣ Unary Operators
+
+👉 Work on **single operand**
+
+| Operator | Meaning   |
+| -------- | --------- |
+| `+`      | Positive  |
+| `-`      | Negative  |
+| `++`     | Increment |
+| `--`     | Decrement |
+| `!`      | NOT       |
+
+```java
+int a = 5;
+System.out.println(++a); // 6
+```
+
+---
+
+## 🔥 Pre vs Post Increment (Important)
+
+```java
+int a = 5;
+
+System.out.println(++a); // 6 (first increase, then use)
+System.out.println(a++); // 6 (use first, then increase)
+```
+
+---
+
+## 6️⃣ Bitwise Operators
+
+👉 Work at **bit level**
+
+| Operator | Meaning     |    |
+| -------- | ----------- | -- |
+| `&`      | AND         |    |
+| `        | `           | OR |
+| `^`      | XOR         |    |
+| `~`      | NOT         |    |
+| `<<`     | Left shift  |    |
+| `>>`     | Right shift |    |
+
+```java
+System.out.println(5 & 3); // 1
+```
+
+---
+
+## 7️⃣ Ternary Operator
+
+👉 Short form of `if-else`
+
+```java
+int max = (a > b) ? a : b;
+```
+
+---
+
+## 8️⃣ instanceof Operator
+
+👉 Checks object type
+
+```java
+if (obj instanceof String) {
+    System.out.println("It is a String");
+}
+```
+
+---
+
+# 🧠 Operator Precedence (Important 🔥)
+
+👉 Order of execution:
+
+1. `()`
+2. Unary (`++`, `--`, `!`)
+3. `*`, `/`, `%`
+4. `+`, `-`
+5. Relational (`<`, `>`)
+6. `==`, `!=`
+7. `&&`
+8. `||`
+9. `=`
+
+---
+
+## 💻 Example Program
+
+```java
+public class OperatorDemo {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+
+        System.out.println(a + b);  // 15
+        System.out.println(a > b);  // true
+        System.out.println(a += 2); // 12
+
+        int max = (a > b) ? a : b;
+        System.out.println(max);
+    }
+}
+```
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 Operators are symbols used to perform operations on variables. Java provides arithmetic, relational, logical, assignment, unary, bitwise, ternary, and instanceof operators.
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. Difference between `==` and `=`?**
+
+* `==` → comparison
+* `=` → assignment
+
+👉 **2. What is ternary operator?**
+Short form of if-else
+
+👉 **3. Difference between `&&` and `&`?**
+
+* `&&` → logical
+* `&` → bitwise
+
+👉 **4. What is operator precedence?**
+Order in which operations are evaluated
+
+---
+
+

@@ -1,0 +1,99 @@
+## 🔷 JRE (Java Runtime Environment)
+
+### 📌 Definition
+
+JRE is the **environment required to run Java programs**.
+
+👉 It does **not** include development tools (like compiler).
+👉 It only helps in **execution**, not creation.
+
+---
+
+## 🧩 Components of JRE
+
+### 1️⃣ JVM (Java Virtual Machine)
+
+* Executes bytecode (`.class` files)
+* Converts it into machine code
+
+---
+
+### 2️⃣ Core Libraries (Java API)
+
+* Predefined classes/packages
+* Examples:
+
+  * `java.lang`
+  * `java.util`
+  * `java.io`
+
+👉 These libraries help in:
+
+* Input/output
+* Data structures
+* String handling, etc.
+
+---
+
+## 🔁 Structure Relationship
+
+```text
+JRE = JVM + Core Libraries
+```
+
+👉 And remember:
+
+```text
+JDK = JRE + Development Tools
+```
+
+---
+
+## ⚙️ Role of JRE
+
+* Provides **runtime environment**
+* Loads classes
+* Manages memory (via JVM)
+* Executes Java programs
+
+---
+
+## 🧠 Simple Analogy
+
+Think like this:
+
+* **JRE** → Environment to run the program
+* **JVM** → Engine that actually runs it
+
+👉 Without JRE, Java program cannot execute.
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 **JRE (Java Runtime Environment)** is a package that provides the necessary environment to run Java programs. It includes JVM and core libraries but does not contain development tools like a compiler.
+
+---
+
+## ❓ Common Viva Questions
+
+👉 **1. Can we run Java program without JRE?**
+❌ No
+
+👉 **2. Does JRE contain compiler?**
+❌ No (compiler is in JDK)
+
+👉 **3. What is inside JRE?**
+✔ JVM + Libraries
+
+---
+
+## ⚡ Quick Comparison
+
+| Feature              | JRE |
+| -------------------- | --- |
+| Run Java Program     | ✔   |
+| Compile Java Program | ❌   |
+| Contains JVM         | ✔   |
+| Contains Compiler    | ❌   |
+

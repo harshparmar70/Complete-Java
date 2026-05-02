@@ -1,0 +1,141 @@
+## 🔷 JDK (Java Development Kit) — In Detail
+
+### 📌 Definition
+
+JDK is the **complete package used to develop, compile, and run Java programs**.
+
+👉 If you want to **write Java code**, you need JDK.
+👉 It includes everything required for development.
+
+---
+
+## 🧩 Components of JDK
+
+### 1️⃣ JRE (Java Runtime Environment)
+
+* Provides environment to run programs
+* Contains JVM + libraries
+
+---
+
+### 2️⃣ Development Tools (Important 🔥)
+
+These are what make JDK special:
+
+#### 🔸 `javac` (Compiler)
+
+* Converts `.java` → `.class` (bytecode)
+
+#### 🔸 `java` (Launcher)
+
+* Runs the compiled program
+
+#### 🔸 `jdb` (Debugger)
+
+* Helps find and fix errors
+
+#### 🔸 `jar` (Archiver)
+
+* Packages multiple files into one `.jar` file
+
+#### 🔸 `javadoc`
+
+* Generates documentation from code
+
+👉 These tools are **NOT present in JRE**
+
+---
+
+## 🔁 Structure Relationship
+
+```text id="v48xqg"
+JDK = JRE + Development Tools
+JRE = JVM + Libraries
+```
+
+---
+
+## 🔁 How JDK Works (Flow)
+
+```text id="0f8pfm"
+Write code (.java)
+   ↓ (javac - compiler)
+Bytecode (.class)
+   ↓ (JRE → JVM)
+Execution → Output
+```
+
+---
+
+## ⚙️ Role of JDK
+
+* ✔ Write Java programs
+* ✔ Compile code
+* ✔ Run programs
+* ✔ Debug programs
+* ✔ Package applications
+
+👉 In short:
+**JDK = Development + Execution**
+
+---
+
+## 🧠 Simple Analogy
+
+Think like this:
+
+* **JDK** → Full toolkit 🧰 (everything you need to build + run)
+* **JRE** → Runtime environment
+* **JVM** → Engine inside runtime
+
+---
+
+## 🎯 Key Features
+
+* ✔ Platform independent development
+* ✔ Includes powerful tools
+* ✔ Supports debugging and packaging
+* ✔ Contains full Java API
+
+---
+
+## 🧾 Exam Answer (Short)
+
+👉 **JDK (Java Development Kit)** is a software package used to develop Java applications. It includes JRE, JVM, and development tools like compiler (`javac`), debugger, and archiver.
+
+---
+
+## ❓ Common Viva Questions
+
+👉 **1. Why is JDK required?**
+To write, compile, and run Java programs.
+
+👉 **2. Does JDK include JRE?**
+✔ Yes
+
+👉 **3. Does JDK include JVM?**
+✔ Yes (via JRE)
+
+👉 **4. What is `javac`?**
+Java compiler that converts source code to bytecode.
+
+---
+
+## ⚡ Quick Comparison Snapshot
+
+| Feature      | JDK |
+| ------------ | --- |
+| Write Code   | ✔   |
+| Compile Code | ✔   |
+| Run Code     | ✔   |
+| Contains JRE | ✔   |
+| Contains JVM | ✔   |
+
+---
+
+## 💡 Easy Way to Remember
+
+👉 **JDK = JRE + Tools**
+👉 **JRE = JVM + Libraries**
+
+

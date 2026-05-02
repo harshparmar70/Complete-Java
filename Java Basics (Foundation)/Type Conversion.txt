@@ -1,0 +1,183 @@
+## 🔷 Type Conversion in Java (Casting) — Complete Guide
+
+### 📌 Definition
+
+**Type conversion** is the process of **converting one data type into another**.
+
+👉 Example:
+
+```java
+int a = 10;
+double b = a;  // int → double
+```
+
+---
+
+# 🧩 Types of Type Conversion
+
+Java has **2 types**:
+
+---
+
+## 1️⃣ Implicit Conversion (Widening)
+
+👉 Done **automatically** by Java
+👉 Converts **smaller → larger type**
+
+### 📈 Flow:
+
+```text
+byte → short → int → long → float → double
+```
+
+---
+
+### 💻 Example
+
+```java
+int a = 10;
+double b = a;  // automatic conversion
+
+System.out.println(b); // 10.0
+```
+
+👉 No data loss ✔
+👉 Safe conversion ✔
+
+---
+
+## 2️⃣ Explicit Conversion (Narrowing)
+
+👉 Done **manually by programmer**
+👉 Converts **larger → smaller type**
+
+---
+
+### 💻 Example
+
+```java
+double d = 10.75;
+int x = (int) d;   // explicit casting
+
+System.out.println(x); // 10
+```
+
+👉 Data loss possible ❌ (0.75 removed)
+
+---
+
+# ⚠️ Key Difference
+
+| Feature    | Widening      | Narrowing     |
+| ---------- | ------------- | ------------- |
+| Conversion | Small → Large | Large → Small |
+| Done by    | Automatic     | Manual        |
+| Data loss  | ❌ No          | ✔ Possible    |
+| Example    | int → double  | double → int  |
+
+---
+
+## 🔥 Important Rules
+
+### ✔ Compatible Types Only
+
+```java
+int x = 10;
+double d = x; // ✔
+```
+
+---
+
+### ❌ Incompatible Types
+
+```java
+int x = "10"; // ❌ Error
+```
+
+---
+
+### ✔ Casting Required
+
+```java
+double d = 5.5;
+int x = (int)d;
+```
+
+---
+
+## 🧠 Special Case: Char Conversion
+
+```java
+char c = 'A';
+int x = c;
+
+System.out.println(x); // 65 (ASCII value)
+```
+
+---
+
+## 💻 Mixed Expression Example
+
+```java
+int a = 5;
+double b = 2.0;
+
+double result = a / b;
+System.out.println(result); // 2.5
+```
+
+👉 Java automatically converts `int → double`
+
+---
+
+## ⚠️ Common Mistake
+
+```java
+int a = 5;
+int b = 2;
+
+double result = a / b;
+System.out.println(result); // 2.0 ❌
+```
+
+👉 Because:
+
+* `a / b` = integer division = 2
+
+✔ Fix:
+
+```java
+double result = (double)a / b;
+```
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 Type conversion in Java is the process of converting one data type into another. It can be implicit (automatic, widening) or explicit (manual, narrowing).
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. What is type casting?**
+Converting one data type into another
+
+👉 **2. Difference between widening and narrowing?**
+
+* Widening → automatic
+* Narrowing → manual
+
+👉 **3. Does narrowing cause data loss?**
+✔ Yes
+
+👉 **4. Why use casting?**
+To control type conversion
+
+---
+
+## 💡 Memory Trick
+
+👉 **Widening = Safe**
+👉 **Narrowing = Risky**
+

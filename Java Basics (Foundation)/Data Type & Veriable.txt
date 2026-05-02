@@ -1,0 +1,238 @@
+## 🔷 Data Types in Java (In Detail)
+
+Data types define **what kind of value a variable can store** and how much memory it uses.
+
+---
+
+# 🧩 Types of Data Types
+
+Java has **2 main categories**:
+
+## 1️⃣ Primitive Data Types (Basic)
+
+* Predefined by Java
+* Store **actual values**
+* Fast and memory-efficient
+
+---
+
+## 🔢 Primitive Data Types Table
+
+| Type      | Size    | Range (approx)   | Example                |
+| --------- | ------- | ---------------- | ---------------------- |
+| `byte`    | 1 byte  | -128 to 127      | `byte b = 10;`         |
+| `short`   | 2 bytes | -32K to 32K      | `short s = 1000;`      |
+| `int`     | 4 bytes | -2B to 2B        | `int x = 100;`         |
+| `long`    | 8 bytes | Very large       | `long l = 100000L;`    |
+| `float`   | 4 bytes | Decimal          | `float f = 3.14f;`     |
+| `double`  | 8 bytes | High precision   | `double d = 3.14159;`  |
+| `char`    | 2 bytes | Single character | `char c = 'A';`        |
+| `boolean` | 1 bit*  | true/false       | `boolean flag = true;` |
+
+👉 `*` (size may vary internally)
+
+---
+
+## 🧠 Important Points
+
+* `float` needs **f/F** suffix
+* `long` needs **L** suffix
+* `char` stores **Unicode characters**
+* Default:
+
+  * `int` → integers
+  * `double` → decimals
+
+---
+
+## 💻 Example Program
+
+```java id="6v3fhl"
+public class DataTypesDemo {
+    public static void main(String[] args) {
+        int a = 10;
+        float b = 5.5f;
+        char c = 'H';
+        boolean flag = true;
+
+        System.out.println(a + " " + b + " " + c + " " + flag);
+    }
+}
+```
+
+---
+
+## 2️⃣ Non-Primitive Data Types (Reference Types)
+
+* Created by user or Java library
+* Store **reference (address)**, not actual value
+
+### Examples:
+
+* String
+* Arrays
+* Classes
+* Interfaces
+---
+
+## 🔁 Difference: Primitive vs Non-Primitive
+
+| Feature | Primitive  | Non-Primitive   |
+| ------- | ---------- | --------------- |
+| Stores  | Value      | Reference       |
+| Size    | Fixed      | Flexible        |
+| Speed   | Faster     | Slightly slower |
+| Example | int, float | String, Array   |
+
+---
+
+## ⚙️ Default Values (Important for Exams)
+
+| Type    | Default  |
+| ------- | -------- |
+| int     | 0        |
+| float   | 0.0      |
+| boolean | false    |
+| char    | '\u0000' |
+| Object  | null     |
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 Data types in Java are classified into **primitive and non-primitive**. Primitive types store actual values (int, float, char, etc.), while non-primitive types store references (String, arrays, objects).
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. How many primitive data types are there?**
+✔ 8
+
+👉 **2. Difference between float and double?**
+
+* float → 4 bytes
+* double → 8 bytes (more precise)
+
+👉 **3. Is String primitive?**
+❌ No
+
+👉 **4. Why use long?**
+For large integer values
+
+---
+
+
+
+## 🔷 Variables in Java (Clear + Exam-Ready)
+
+### 📌 Definition
+
+A **variable** is a named memory location used to **store data** that can change during program execution.
+
+👉 Think of it as a **container for values**
+
+---
+
+## 🧩 Basic Syntax
+
+```java
+dataType variableName = value;
+```
+
+👉 Example:
+
+```java
+int age = 20;
+```
+
+---
+
+## 🧠 Types of Variables in Java
+
+## 1️⃣ Local Variables
+
+* Declared **inside a method/block**
+* Must be **initialized before use**
+* Scope is limited to that block
+
+```java
+public class Demo {
+    public static void main(String[] args) {
+        int x = 10;  // local variable
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+## 2️⃣ Instance Variables (Non-static)
+
+* Declared **inside class, outside methods**
+* Each object gets its own copy
+* Default values are assigned automatically
+
+```java
+class Student {
+    int marks;  // instance variable
+}
+```
+
+---
+
+## 3️⃣ Static Variables (Class Variables)
+
+* Declared using `static`
+* Shared among all objects
+* Only one copy exists
+
+```java
+class Test {
+    static int count = 0;
+}
+```
+
+---
+
+## 🔁 Summary Table
+
+| Type     | Location                | Scope        | Memory      |
+| -------- | ----------------------- | ------------ | ----------- |
+| Local    | Inside method           | Limited      | Stack       |
+| Instance | Inside class            | Object level | Heap        |
+| Static   | Inside class (`static`) | Class level  | Method area |
+
+---
+## ⚠️ Important Points
+
+* Local variables **don’t get default values**
+* Instance & static variables **get default values**
+* Variable name should be **meaningful**
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 A variable in Java is a container used to store data. There are three types: local, instance, and static variables, based on their scope and usage.
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. What is a variable?**
+Storage location for data
+
+👉 **2. Difference between instance and static?**
+
+* Instance → per object
+* Static → shared
+
+👉 **3. Can local variables have default values?**
+❌ No
+
+👉 **4. Where are variables stored?**
+
+* Local → Stack
+* Objects → Heap
+

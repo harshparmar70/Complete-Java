@@ -1,0 +1,147 @@
+## 🔷 Java Program Structure (Exam + Practical View)
+
+A Java program has a **fixed structure**. Once you understand this, writing programs becomes easy.
+
+---
+
+## 📄 Basic Structure
+
+```java
+// 1. Package declaration (optional)
+package mypackage;
+
+// 2. Import statements (optional)
+import java.util.*;
+
+// 3. Class definition
+public class HelloWorld {
+
+    // 4. Main method (entry point)
+    public static void main(String[] args) {
+
+        // 5. Statements (program logic)
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+---
+
+## 🧩 Explanation of Each Part
+
+### 1️⃣ Package Declaration
+
+```java
+package mypackage;
+```
+
+* Used to **organize classes into folders**
+* Optional
+* Must be **first line** if present
+
+---
+
+### 2️⃣ Import Statement
+
+```java
+import java.util.*;
+```
+
+* Allows using predefined classes (like Scanner, ArrayList)
+* Optional (Java automatically imports `java.lang`)
+
+---
+
+### 3️⃣ Class Declaration
+
+```java
+public class HelloWorld
+```
+
+* Every Java program must have **at least one class**
+* Class name = file name (`HelloWorld.java`)
+
+---
+
+### 4️⃣ Main Method (VERY IMPORTANT 🔥)
+
+```java
+public static void main(String[] args)
+```
+
+👉 This is the **starting point of execution**
+
+Breakdown:
+
+* `public` → accessible everywhere
+* `static` → no object needed
+* `void` → no return value
+* `String[] args` → command-line arguments
+
+---
+
+### 5️⃣ Statements (Program Logic)
+
+```java
+System.out.println("Hello, World!");
+```
+
+* Actual code that performs tasks
+
+---
+
+## 🔁 Execution Flow
+
+```text
+Write (.java)
+   ↓
+Compile (javac)
+   ↓
+Bytecode (.class)
+   ↓
+Run (java → JVM)
+   ↓
+Output
+```
+
+---
+
+## 🧠 Important Rules
+
+* File name must match class name
+* Java is **case-sensitive**
+* Program must have **main() method** to run
+* Statements end with `;`
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 A Java program consists of package declaration, import statements, class definition, main method, and program statements. The execution starts from the `main()` method.
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. What is the entry point of Java program?**
+✔ `main()` method
+
+👉 **2. Can Java program run without main()?**
+❌ No (for standalone applications)
+
+👉 **3. Why is main() static?**
+So JVM can call it without creating an object
+
+---
+
+## 💻 Small Practice Program
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        System.out.println("Sum = " + (a + b));
+    }
+}
+```

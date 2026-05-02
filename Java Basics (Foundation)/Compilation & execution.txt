@@ -1,0 +1,160 @@
+## 🔷 Java Compilation & Execution (Step-by-Step)
+
+This is how a Java program actually **runs behind the scenes**—very important for exams and viva.
+
+---
+
+## 🔁 Complete Flow
+
+```text
+Source Code (.java)
+   ↓ (Compiler: javac)
+Bytecode (.class)
+   ↓ (JVM)
+Machine Code
+   ↓
+Output
+```
+
+---
+
+## 🧩 Step 1: Writing Source Code
+
+* File extension: `.java`
+* Written using any editor (IntelliJ, Eclipse, Notepad)
+
+👉 Example:
+
+```java
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+```
+
+---
+
+## ⚙️ Step 2: Compilation
+
+👉 Command:
+
+```bash
+javac Demo.java
+```
+
+### What happens:
+
+* Compiler (`javac`) checks syntax errors
+* Converts code into **bytecode**
+
+👉 Output file:
+
+```
+Demo.class
+```
+
+👉 Key point:
+
+* Bytecode is **not machine-specific**
+
+---
+
+## 🚀 Step 3: Execution
+
+👉 Command:
+
+```bash
+java Demo
+```
+
+### What happens:
+
+* JVM loads `.class` file
+* Converts bytecode → machine code
+* Executes program
+
+👉 Output:
+
+```
+Hello Java
+```
+
+---
+
+## 🧠 Role of JVM in Execution
+
+* Loads class file
+* Verifies bytecode
+* Uses interpreter/JIT
+* Executes instructions
+
+---
+
+## 🔥 Important Concept: Bytecode
+
+👉 Bytecode is:
+
+* Intermediate code
+* Platform-independent
+
+👉 That’s why Java is:
+**“Write Once, Run Anywhere” (WORA)**
+
+---
+
+## ⚠️ Common Errors
+
+### ❌ Compilation Error
+
+* Syntax mistake
+
+```java
+int a = ;
+```
+
+👉 Found during `javac`
+
+---
+
+### ❌ Runtime Error
+
+* Happens during execution
+
+```java
+int x = 10/0;
+```
+
+---
+
+## 🎯 Exam Answer (Short)
+
+👉 Java program execution involves two steps:
+
+1. **Compilation** using `javac` to convert source code into bytecode
+2. **Execution** using JVM to convert bytecode into machine code and produce output
+
+---
+
+## ❓ Viva Questions
+
+👉 **1. What is javac?**
+Java compiler
+
+👉 **2. What is java command?**
+Used to run compiled program
+
+👉 **3. Why is Java platform independent?**
+Because bytecode runs on JVM
+
+👉 **4. What is .class file?**
+Compiled bytecode file
+
+---
+
+## 💡 Quick Memory Trick
+
+👉 **javac → creates (.class)**
+👉 **java → runs program**
+
+
