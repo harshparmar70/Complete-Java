@@ -1,0 +1,189 @@
+## 🔷 Constructors in Java (Complete + Exam-Ready)
+
+### 📌 Definition
+
+A **constructor** is a **special method** used to **initialize objects** when they are created.
+
+👉 It runs **automatically** when you use `new`
+
+---
+
+# 🧩 Key Properties (Very Important 🔥)
+
+* Name = **same as class name**
+* **No return type** (not even `void`)
+* Called **automatically** at object creation
+* Used to **initialize variables**
+
+---
+
+# 💻 Basic Example
+
+```java id="y8s7tx"
+class Student {
+    String name;
+
+    Student() {   // constructor
+        name = "Default";
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        System.out.println(s1.name);
+    }
+}
+```
+
+---
+
+# 🧠 Types of Constructors
+
+---
+
+## 1️⃣ Default Constructor
+
+👉 Provided by JVM if you don’t write any constructor
+
+```java id="5ysr83"
+class Test {
+    int x; // default value = 0
+}
+```
+
+👉 JVM automatically creates constructor
+
+---
+
+## 2️⃣ No-Argument Constructor
+
+👉 Constructor with **no parameters**
+
+```java id="9p6gso"
+class Test {
+    Test() {
+        System.out.println("No-arg constructor");
+    }
+}
+```
+
+---
+
+## 3️⃣ Parameterized Constructor
+
+👉 Constructor with **parameters**
+
+```java id="5r9o86"
+class Student {
+    String name;
+    int marks;
+
+    Student(String n, int m) {
+        name = n;
+        marks = m;
+    }
+}
+```
+
+👉 Usage:
+
+```java id="zkp0a9"
+Student s1 = new Student("Harsh", 90);
+```
+
+---
+
+# 🔁 Constructor Overloading
+
+👉 Multiple constructors in same class
+
+```java id="a5h9yh"
+class Demo {
+    Demo() {
+        System.out.println("Default");
+    }
+
+    Demo(int x) {
+        System.out.println("Parameterized");
+    }
+}
+```
+
+---
+
+# 🔥 `this` with Constructor
+
+```java id="c2dczp"
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name; // differentiate
+    }
+}
+```
+
+---
+
+# ⚠️ Important Rules
+
+* Constructor **cannot return value**
+* If you define constructor → JVM won’t create default one
+* Can be **overloaded** but not inherited
+
+---
+
+# 🧠 Constructor vs Method
+
+| Feature     | Constructor       | Method         |
+| ----------- | ----------------- | -------------- |
+| Name        | Same as class     | Any name       |
+| Return type | ❌ None            | ✔ Required     |
+| Purpose     | Initialize object | Perform action |
+| Call        | Automatic         | Manual         |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 A constructor is a special method in Java used to initialize objects. It has the same name as the class, has no return type, and is automatically invoked when an object is created.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Can constructor be static?**
+❌ No
+
+👉 **2. Can constructor be overloaded?**
+✔ Yes
+
+👉 **3. What happens if no constructor is defined?**
+✔ JVM provides default constructor
+
+👉 **4. Can constructor return value?**
+❌ No
+
+---
+
+# 💡 Pro Tip
+
+👉 Always use:
+
+* Parameterized constructor → for real data
+* No-arg → for default values
+
+---
+
+## 🔥 Practice
+
+👉 Create class:
+
+* Student (name, marks)
+* Use:
+
+  * default constructor
+  * parameterized constructor
+
+---

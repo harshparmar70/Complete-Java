@@ -1,0 +1,266 @@
+
+# 🔷 Class (Detailed Definition)
+
+👉 **Definition:**
+A **class** in Java is a **user-defined data type** that acts as a **blueprint or template** for creating objects. It encapsulates **data (variables/fields)** and **behavior (methods/functions)** into a single unit.
+
+👉 In simple words:
+A class defines **what an object will contain and what it can do**.
+
+---
+
+### 🧠 Key Points (Important)
+
+* Class is **logical (no real existence)**
+* It does **not occupy memory for data directly**
+* It groups:
+
+  * **Variables → state**
+  * **Methods → behavior**
+* Supports **encapsulation (data + methods together)**
+
+---
+
+### 💻 Example:
+
+```java
+class Student {
+    String name;   // data
+    int marks;
+
+    void display() {  // behavior
+        System.out.println(name + " " + marks);
+    }
+}
+```
+
+---
+
+# 🔷 Object (Detailed Definition)
+
+👉 **Definition:**
+An **object** is a **real-world entity** and an **instance of a class** that contains **actual values** for the properties defined in the class and can use its methods.
+
+👉 In simple words:
+Object = **instance of class with real data**
+
+---
+
+### 🧠 Key Points (Important)
+
+* Object is **physical (real existence)**
+* It occupies **memory in heap**
+* Contains:
+
+  * **State (values of variables)**
+  * **Behavior (methods)**
+* Created using `new` keyword
+
+---
+
+### 💻 Example:
+
+```java
+Student s1 = new Student();
+
+s1.name = "Harsh";
+s1.marks = 90;
+```
+
+---
+
+# 🔁 Combined Understanding
+
+👉 Class defines → Object uses
+
+```text
+Class → Blueprint
+Object → Real implementation
+```
+
+---
+
+# 🔥 Real-Life Example
+
+* Class → **Mobile design**
+* Object → **Your actual phone**
+
+---
+
+# 🎯 Exam Definition (Perfect Writing)
+
+👉 **Class:**
+A class is a user-defined blueprint that contains variables and methods used to create objects.
+
+👉 **Object:**
+An object is an instance of a class that represents a real-world entity and contains data and behavior.
+
+---
+
+# 💡 Extra (For Higher Marks)
+
+👉 Object has **3 characteristics**:
+
+1. **State** (data)
+2. **Behavior** (methods)
+3. **Identity** (unique reference)
+
+
+## 🔷 Object Creation Process in Java (Step-by-Step)
+
+This is a **very important theory question**—they expect you to explain *what happens internally* when you write:
+
+```java
+Student s1 = new Student();
+```
+
+---
+
+# 🧩 Step-by-Step Process
+
+## 1️⃣ Declaration
+
+```java
+Student s1;
+```
+
+👉 What happens:
+
+* A **reference variable** `s1` is created
+* It can hold the address of a `Student` object
+* Stored in **stack memory**
+
+---
+
+## 2️⃣ Object Instantiation
+
+```java
+new Student();
+```
+
+👉 What happens:
+
+* JVM allocates **memory in heap**
+* Space is created for:
+
+  * Instance variables
+* Default values assigned:
+
+  * int → 0
+  * String → null
+
+---
+
+## 3️⃣ Initialization
+
+👉 Constructor is called
+
+```java
+Student()
+```
+
+* Initializes object values
+* If no constructor → default constructor runs
+
+---
+
+## 4️⃣ Assignment (Reference Linking)
+
+```java
+s1 = new Student();
+```
+
+👉 What happens:
+
+* Reference `s1` stores the **memory address** of object
+* Now object can be accessed using `s1`
+
+---
+
+# 🔁 Complete Flow
+
+```text
+Declaration → Instantiation → Initialization → Assignment
+```
+
+---
+
+# 💻 Full Example
+
+```java
+class Student {
+    String name;
+    int marks;
+
+    Student() {
+        name = "Default";
+        marks = 0;
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        System.out.println(s1.name);
+        System.out.println(s1.marks);
+    }
+}
+```
+
+---
+
+# 🧠 Memory Representation
+
+```text
+Stack:          Heap:
+s1  --------->  [Student Object]
+                 name = "Default"
+                 marks = 0
+```
+
+---
+
+# ⚠️ Important Points
+
+* `new` keyword → creates object
+* Constructor → initializes object
+* Reference variable → accesses object
+* Object stored in **heap memory**
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Object creation in Java involves four steps:
+
+1. Declaration of reference variable
+2. Instantiation using `new` keyword
+3. Initialization using constructor
+4. Assigning reference to the object
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What does `new` keyword do?**
+Allocates memory
+
+👉 **2. Where is object stored?**
+Heap memory
+
+👉 **3. What is reference variable?**
+Stores address of object
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+* Stack → reference
+* Heap → actual object
+
+---
+

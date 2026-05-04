@@ -1,0 +1,162 @@
+## 🔷 Loops in Java: `for`, `while`, `do-while`
+
+Loops are used to **repeat a block of code** until a condition is satisfied.
+
+---
+
+# 1️⃣ `for` Loop
+
+### 📌 Use:
+
+When you know **how many times** to run the loop
+
+### 💻 Syntax:
+
+```java
+for (initialization; condition; update) {
+    // code
+}
+```
+
+### ✅ Example:
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+👉 Output:
+
+```
+1 2 3 4 5
+```
+
+---
+
+# 2️⃣ `while` Loop
+
+### 📌 Use:
+
+When number of iterations is **unknown**
+
+### 💻 Syntax:
+
+```java
+while (condition) {
+    // code
+}
+```
+
+### ✅ Example:
+
+```java
+int i = 1;
+
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+---
+
+# 3️⃣ `do-while` Loop
+
+### 📌 Use:
+
+When you want loop to run **at least once**
+
+### 💻 Syntax:
+
+```java
+do {
+    // code
+} while (condition);
+```
+
+### ✅ Example:
+
+```java
+int i = 1;
+
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+---
+
+# 🔥 Key Difference (Very Important)
+
+| Loop     | Condition Check | Executes at least once? |
+| -------- | --------------- | ----------------------- |
+| for      | Before          | ❌ No                    |
+| while    | Before          | ❌ No                    |
+| do-while | After           | ✔ Yes                   |
+
+---
+
+# 🧠 Flow Understanding
+
+* `for` → compact loop (init + condition + update in one line)
+* `while` → flexible, good for unknown loops
+* `do-while` → executes first, checks later
+
+---
+
+# ⚠️ Infinite Loop Example
+
+```java
+while (true) {
+    System.out.println("Hello");
+}
+```
+
+👉 Runs forever (until stopped)
+
+---
+
+# 💻 Example: Sum of Numbers
+
+```java
+int sum = 0;
+
+for (int i = 1; i <= 5; i++) {
+    sum += i;
+}
+
+System.out.println("Sum = " + sum);
+```
+
+---
+
+# 🎯 Exam Answer (Short)
+
+👉 Loops in Java (`for`, `while`, `do-while`) are used to execute a block of code repeatedly. `for` is used when the number of iterations is known, `while` when it is unknown, and `do-while` ensures execution at least once.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Which loop executes at least once?**
+✔ do-while
+
+👉 **2. Difference between for and while?**
+
+* for → known iterations
+* while → unknown iterations
+
+👉 **3. What is infinite loop?**
+Loop that never ends
+
+---
+
+# 💡 Pro Tips
+
+* Use `for` → counting problems
+* Use `while` → condition-based problems
+* Use `do-while` → menu-driven programs
+
+

@@ -1,0 +1,169 @@
+## 🔷 `this` Keyword in Java (Complete + Exam-Ready)
+
+### 📌 Definition
+
+`this` is a **reference variable** that refers to the **current object** of a class.
+
+👉 In simple words:
+**`this` = current object**
+
+---
+
+# 🧠 Why We Use `this`
+
+Mainly used to:
+
+* Avoid confusion between **instance variables and parameters**
+* Access current object data
+* Call constructors or methods of same class
+
+---
+
+# 🧩 Uses of `this` Keyword
+
+---
+
+## 1️⃣ Differentiate Variables (Most Important 🔥)
+
+```java
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name; // instance = parameter
+    }
+}
+```
+
+👉 Without `this`, both refer to parameter → confusion
+
+---
+
+## 2️⃣ Call Current Class Method
+
+```java
+class Test {
+    void show() {
+        System.out.println("Hello");
+    }
+
+    void display() {
+        this.show(); // calling method
+    }
+}
+```
+
+---
+
+## 3️⃣ Call Another Constructor (Constructor Chaining)
+
+```java
+class Demo {
+    Demo() {
+        this(10); // calls parameterized constructor
+        System.out.println("Default");
+    }
+
+    Demo(int x) {
+        System.out.println("Parameterized");
+    }
+}
+```
+
+👉 Rule: must be **first statement**
+
+---
+
+## 4️⃣ Pass Current Object as Argument
+
+```java
+class Test {
+    void display(Test t) {
+        System.out.println("Method called");
+    }
+
+    void show() {
+        display(this);
+    }
+}
+```
+
+---
+
+## 5️⃣ Return Current Object
+
+```java
+class Test {
+    Test getObject() {
+        return this;
+    }
+}
+```
+
+---
+
+# ⚠️ Important Rules
+
+* ✔ Refers to current object
+* ✔ Cannot be used in **static methods**
+* ✔ Used inside class only
+
+---
+
+# 🔁 Summary Table
+
+| Use               | Purpose           |
+| ----------------- | ----------------- |
+| `this.variable`   | Resolve ambiguity |
+| `this.method()`   | Call method       |
+| `this()`          | Call constructor  |
+| `this` (argument) | Pass object       |
+| `return this`     | Return object     |
+
+---
+
+# 💻 Full Example
+
+```java
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(this.name);
+    }
+}
+```
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 The `this` keyword in Java is a reference variable that refers to the current object. It is used to access instance variables, call methods or constructors, and pass or return the current object.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What does `this` refer to?**
+Current object
+
+👉 **2. Can we use `this` in static method?**
+❌ No
+
+👉 **3. What is constructor chaining?**
+Calling one constructor from another using `this()`
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important use:
+
+```java
+this.variable = parameter;
+```
+
