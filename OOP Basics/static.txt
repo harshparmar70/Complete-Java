@@ -1,0 +1,169 @@
+## 🔷 Static Variables & Methods in Java (Clear + Exam-Ready)
+
+### 📌 What does `static` mean?
+
+`static` means the member **belongs to the class**, not to individual objects.
+
+👉 So you can access it **without creating an object**.
+
+---
+
+# 🧩 1️⃣ Static Variable (Class Variable)
+
+### 📌 Definition
+
+A **static variable** is shared among **all objects of a class**.
+Only **one copy** exists in memory.
+
+---
+
+### 💻 Example
+
+```java id="x6c2n8"
+class Student {
+    String name;
+    static String college = "ABC College"; // static variable
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        s1.name = "A";
+        s2.name = "B";
+
+        System.out.println(s1.name + " " + Student.college);
+        System.out.println(s2.name + " " + Student.college);
+    }
+}
+```
+
+👉 Output:
+
+```id="y3u4q1"
+A ABC College
+B ABC College
+```
+
+👉 Both objects share same `college`
+
+---
+
+## 🧠 Key Points
+
+* ✔ One copy only
+* ✔ Shared by all objects
+* ✔ Stored in **method area**
+* ✔ Access using: `ClassName.variable`
+
+---
+
+# 🧩 2️⃣ Static Method
+
+### 📌 Definition
+
+A **static method** belongs to the class and can be called **without object**.
+
+---
+
+### 💻 Example
+
+```java id="8ztc5v"
+class Test {
+    static void show() {
+        System.out.println("Static method called");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Test.show(); // no object needed
+    }
+}
+```
+
+---
+
+## ⚠️ Important Rules
+
+### ✔ Static method can:
+
+* Access **only static variables/methods directly**
+
+### ❌ Cannot:
+
+* Access **non-static (instance) variables directly**
+* Use `this` or `super`
+
+---
+
+### ❌ Example (Error)
+
+```java id="0ytg6q"
+class Test {
+    int x = 10;
+
+    static void show() {
+        System.out.println(x); // ❌ error
+    }
+}
+```
+
+---
+
+# 🔁 Static Block (Extra 🔥)
+
+```java id="fl69kk"
+class Test {
+    static {
+        System.out.println("Static block executed");
+    }
+}
+```
+
+👉 Runs **once when class loads**
+
+---
+
+# 🔁 Static vs Non-Static
+
+| Feature     | Static    | Non-Static      |
+| ----------- | --------- | --------------- |
+| Belongs to  | Class     | Object          |
+| Memory      | One copy  | Multiple copies |
+| Access      | ClassName | Object          |
+| Uses `this` | ❌ No      | ✔ Yes           |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Static variables and methods belong to the class rather than objects. Static variables are shared among all instances, and static methods can be called without creating an object.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Why use static?**
+To share common data
+
+👉 **2. Can static method access instance variable?**
+❌ No
+
+👉 **3. How to call static method?**
+Using class name
+
+👉 **4. What is static block?**
+Runs once when class loads
+
+---
+
+# 💡 Pro Tip
+
+👉 Use static when:
+
+* Value is **common for all objects** (like college name)
+
+---
+

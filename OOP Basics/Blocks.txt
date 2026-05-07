@@ -1,0 +1,201 @@
+## 🔷 Blocks in Java (Static Block + Instance Block)
+
+Blocks are **code sections inside `{}`** that execute at specific times during program execution.
+
+---
+
+# 🧩 Types of Blocks
+
+1. **Static Block**
+2. **Instance Block (Non-static block)**
+
+---
+
+# 🔷 1️⃣ Static Block
+
+### 📌 Definition
+
+A **static block** is executed **once when the class is loaded** into memory.
+
+---
+
+### 💻 Syntax
+
+```java
+static {
+    // code
+}
+```
+
+---
+
+### ✅ Example
+
+```java
+class Demo {
+    static {
+        System.out.println("Static block executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+}
+```
+
+👉 Output:
+
+```
+Static block executed
+Main method
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ Runs **only once**
+* ✔ Executes **before main()**
+* ✔ Used for **static initialization**
+
+---
+
+# 🔷 2️⃣ Instance Block
+
+### 📌 Definition
+
+An **instance block** runs **every time an object is created**, before the constructor.
+
+---
+
+### 💻 Syntax
+
+```java
+{
+    // instance block
+}
+```
+
+---
+
+### ✅ Example
+
+```java
+class Demo {
+    {
+        System.out.println("Instance block executed");
+    }
+
+    Demo() {
+        System.out.println("Constructor called");
+    }
+
+    public static void main(String[] args) {
+        Demo d1 = new Demo();
+        Demo d2 = new Demo();
+    }
+}
+```
+
+👉 Output:
+
+```
+Instance block executed
+Constructor called
+Instance block executed
+Constructor called
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ Runs **every time object is created**
+* ✔ Executes **before constructor**
+* ✔ Used for **common initialization**
+
+---
+
+# 🔁 Execution Order (VERY IMPORTANT 🔥)
+
+```text
+Static Block → Instance Block → Constructor
+```
+
+---
+
+# 💻 Combined Example
+
+```java
+class Test {
+    static {
+        System.out.println("Static Block");
+    }
+
+    {
+        System.out.println("Instance Block");
+    }
+
+    Test() {
+        System.out.println("Constructor");
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+    }
+}
+```
+
+👉 Output:
+
+```
+Static Block
+Instance Block
+Constructor
+```
+
+---
+
+# 🔁 Static vs Instance Block
+
+| Feature   | Static Block          | Instance Block        |
+| --------- | --------------------- | --------------------- |
+| Execution | Once                  | Every object          |
+| Time      | Class loading         | Object creation       |
+| Keyword   | static                | No keyword            |
+| Purpose   | Static initialization | Object initialization |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Static blocks are executed once when the class is loaded, while instance blocks are executed every time an object is created, before the constructor.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. When does static block execute?**
+When class loads
+
+👉 **2. When does instance block execute?**
+When object is created
+
+👉 **3. Which runs first?**
+✔ Static block
+
+👉 **4. Can we have multiple blocks?**
+✔ Yes
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text
+Static → Once  
+Instance → Every object  
+Constructor → After instance
+```
+

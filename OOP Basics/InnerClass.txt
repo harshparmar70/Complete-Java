@@ -1,0 +1,220 @@
+## 🔷 Inner Class in Java (Complete + Exam-Ready)
+
+### 📌 Definition
+
+An **inner class** is a class **defined inside another class**.
+
+👉 In simple words:
+**Class inside a class**
+
+---
+
+# 🧠 Why Use Inner Classes?
+
+* ✔ Better **logical grouping**
+* ✔ Access **outer class members easily**
+* ✔ Improves **code readability & security**
+
+---
+
+# 🧩 Types of Inner Classes
+
+1. **Member Inner Class (Regular Inner Class)**
+2. **Static Nested Class**
+3. **Local Inner Class**
+4. **Anonymous Inner Class**
+
+---
+
+# 🔷 1️⃣ Member Inner Class
+
+### 📌 Definition
+
+A non-static class inside another class
+
+---
+
+### 💻 Example
+
+```java id="l2fqf3"
+class Outer {
+    int x = 10;
+
+    class Inner {
+        void show() {
+            System.out.println("x = " + x);
+        }
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+        Outer.Inner in = obj.new Inner();
+
+        in.show();
+    }
+}
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ Needs outer class object
+* ✔ Can access all outer class members
+
+---
+
+# 🔷 2️⃣ Static Nested Class
+
+### 📌 Definition
+
+Inner class declared as **static**
+
+---
+
+### 💻 Example
+
+```java id="twgcyv"
+class Outer {
+    static class Inner {
+        void show() {
+            System.out.println("Static inner class");
+        }
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Outer.Inner obj = new Outer.Inner();
+        obj.show();
+    }
+}
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ No need for outer object
+* ✔ Can access only static members
+
+---
+
+# 🔷 3️⃣ Local Inner Class
+
+### 📌 Definition
+
+Class defined **inside a method**
+
+---
+
+### 💻 Example
+
+```java id="b1ldj7"
+class Test {
+    void display() {
+
+        class Inner {
+            void msg() {
+                System.out.println("Local inner class");
+            }
+        }
+
+        Inner i = new Inner();
+        i.msg();
+    }
+}
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ Used inside method only
+* ✔ Cannot be accessed outside
+
+---
+
+# 🔷 4️⃣ Anonymous Inner Class
+
+### 📌 Definition
+
+Inner class **without a name**
+
+---
+
+### 💻 Example
+
+```java id="1c4sjg"
+abstract class Test {
+    abstract void show();
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Test t = new Test() {
+            void show() {
+                System.out.println("Anonymous class");
+            }
+        };
+
+        t.show();
+    }
+}
+```
+
+---
+
+## 🧠 Key Points
+
+* ✔ No class name
+* ✔ Used for **one-time use**
+* ✔ Mostly used with interfaces
+
+---
+
+# 🔁 Summary Table
+
+| Type      | Needs Outer Object | Access      |
+| --------- | ------------------ | ----------- |
+| Member    | ✔ Yes              | All members |
+| Static    | ❌ No               | Static only |
+| Local     | ✔ Inside method    | Limited     |
+| Anonymous | ❌ No name          | One-time    |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 An inner class is a class defined inside another class. It is used to logically group classes and access outer class members. Types include member, static nested, local, and anonymous inner classes.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is inner class?**
+Class inside class
+
+👉 **2. Types of inner classes?**
+Member, static, local, anonymous
+
+👉 **3. Which needs outer object?**
+✔ Member inner class
+
+👉 **4. What is anonymous class?**
+Class without name
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important for exams:
+
+* Member inner class
+* Anonymous class
+
+---
+

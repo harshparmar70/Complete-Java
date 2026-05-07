@@ -1,0 +1,137 @@
+## 🔷 Encapsulation in Java (Very Important OOP Concept)
+
+### 📌 Definition
+
+**Encapsulation** is the process of **wrapping data (variables) and code (methods)** together into a single unit (class) and **restricting direct access** to the data.
+
+👉 In simple words:
+**Data hiding + controlled access**
+
+---
+
+# 🧠 Why Encapsulation?
+
+* ✔ Protect data from unauthorized access
+* ✔ Increase security
+* ✔ Improve maintainability
+* ✔ Control how data is modified
+
+---
+
+# 🧩 How to Achieve Encapsulation?
+
+👉 Use:
+
+1. **Private variables (data hiding)**
+2. **Public getter & setter methods (access control)**
+
+---
+
+# 💻 Example (Most Important 🔥)
+
+```java id="0i3j3r"
+class Student {
+    private String name;  // hidden data
+
+    // setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // getter method
+    public String getName() {
+        return name;
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.setName("Harsh");   // set value
+        System.out.println(s.getName()); // get value
+    }
+}
+```
+
+---
+
+# 🔁 Without Encapsulation (Wrong Way ❌)
+
+```java id="94zpmq"
+class Student {
+    String name; // public → directly accessible
+}
+```
+
+👉 Anyone can modify data → not safe
+
+---
+
+# 🔐 With Encapsulation (Correct ✔)
+
+```java id="a5kk3y"
+private String name;
+```
+
+👉 Access only through methods
+
+---
+
+# 🧠 Real-Life Example
+
+👉 ATM Machine
+
+* You can’t access bank balance directly
+* You use methods (withdraw, deposit)
+
+---
+
+# ⚠️ Important Points
+
+* ✔ Use `private` for variables
+* ✔ Use `public` getters/setters
+* ✔ Improves security & control
+
+---
+
+# 🔁 Advantages
+
+* Data security 🔒
+* Controlled access
+* Easy to update code
+* Better code structure
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Encapsulation is the process of binding data and methods into a single unit and restricting direct access to data using private variables and public getter/setter methods.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is encapsulation?**
+Data hiding
+
+👉 **2. How to achieve it?**
+Private variables + getters/setters
+
+👉 **3. Why use encapsulation?**
+Security and control
+
+---
+
+# 💡 Pro Tip
+
+👉 Always write:
+
+```java id="9xqg0k"
+private variable + public getter/setter
+```
+
+👉 This is **standard interview practice**
+
+---
+

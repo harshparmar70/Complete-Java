@@ -1,0 +1,229 @@
+Alright—here’s a **clear, exam-ready explanation of ARRAY in Java + memory structure** 👇
+
+---
+
+## 🔹 What is an Array?
+
+> An array is a **collection of elements of the same data type stored in contiguous memory locations**.
+
+---
+
+## 🔹 Example Code
+
+```java id="i6ntqg"
+public class ArrayDemo {
+    public static void main(String[] args) {
+        int[] arr = new int[3];
+
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
+    }
+}
+```
+
+---
+
+## 🔹 Memory Structure
+
+```text id="0q6g8z"
+==================== STACK MEMORY ====================
+
+main()
+------------------------------------------------------
+arr ───────────────► (reference to array)
+
+
+==================== HEAP MEMORY =====================
+
+Array Object
+--------------------------
+index   value
+--------------------------
+0       10
+1       20
+2       30
+```
+
+---
+
+## 🔹 Step-by-Step Execution
+
+### ✅ 1. Array Declaration
+
+```java id="1b6y4q"
+int[] arr;
+```
+
+* `arr` created in **stack**
+* No array yet
+
+---
+
+### ✅ 2. Array Creation
+
+```java id="zazn7c"
+arr = new int[3];
+```
+
+* Array created in **heap**
+* Default values:
+
+```text id="w83p8g"
+[0, 0, 0]
+```
+
+---
+
+### ✅ 3. Assign Values
+
+```java id="b3zpg6"
+arr[0] = 10;
+arr[1] = 20;
+arr[2] = 30;
+```
+
+---
+
+## 🔹 Final Output
+
+```text id="2y2m6d"
+10
+20
+30
+```
+
+---
+
+## 🔹 Important Concepts (Exam Points)
+
+* Array is an **object in Java**
+* Stored in **heap memory**
+* Reference (`arr`) stored in **stack**
+* Index starts from **0**
+* Fixed size (cannot change)
+
+---
+
+## 🔹 One-Line Answer
+
+> Array is an object stored in heap memory, while its reference variable is stored in stack.
+
+---
+
+## 🔥 Bonus (Shortcut Initialization)
+
+```java id="5tfcw8"
+int[] arr = {10, 20, 30};
+```
+
+
+In Java, arrays do **not** have their own methods like objects do.
+Most useful array operations are provided by the **`Arrays`** class in `java.util`.
+
+```java
+import java.util.Arrays;
+```
+
+## Common array functions
+
+```java
+int[] arr = {40, 10, 30, 20};
+```
+
+### 1) `arr.length`
+
+Returns the size of the array.
+
+```java
+System.out.println(arr.length);   // 4
+```
+
+### 2) `Arrays.toString(arr)`
+
+Prints the array in readable form.
+
+```java
+System.out.println(Arrays.toString(arr));   // [40, 10, 30, 20]
+```
+
+### 3) `Arrays.sort(arr)`
+
+Sorts the array in ascending order.
+
+```java
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));   // [10, 20, 30, 40]
+```
+
+### 4) `Arrays.fill(arr, value)`
+
+Fills every element with one value.
+
+```java
+Arrays.fill(arr, 5);
+System.out.println(Arrays.toString(arr));   // [5, 5, 5, 5]
+```
+
+### 5) `Arrays.copyOf(arr, newLength)`
+
+Copies array into a new array.
+
+```java
+int[] copy = Arrays.copyOf(arr, 6);
+```
+
+### 6) `Arrays.copyOfRange(arr, start, end)`
+
+Copies part of an array.
+
+```java
+int[] part = Arrays.copyOfRange(arr, 1, 3);
+```
+
+### 7) `Arrays.binarySearch(arr, key)`
+
+Searches a sorted array.
+
+```java
+int pos = Arrays.binarySearch(arr, 30);
+```
+
+### 8) `Arrays.equals(a, b)`
+
+Checks whether two arrays are equal.
+
+```java
+boolean same = Arrays.equals(a, b);
+```
+
+## Simple example
+
+```java
+import java.util.Arrays;
+
+public class ArrayFun {
+    public static void main(String[] args) {
+        int[] arr = {40, 10, 30, 20};
+
+        System.out.println("Length: " + arr.length);
+        System.out.println("Original: " + Arrays.toString(arr));
+
+        Arrays.sort(arr);
+        System.out.println("Sorted: " + Arrays.toString(arr));
+
+        Arrays.fill(arr, 7);
+        System.out.println("Filled: " + Arrays.toString(arr));
+    }
+}
+```
+
+## Exam line
+
+> Java arrays are objects, but common array operations are performed using the `Arrays` class.
+
+I can also give you **array functions in table form** for college notes.
