@@ -1,0 +1,241 @@
+# 🔷 `final` Keyword in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+The `final` keyword is used to **restrict modification**.
+
+👉 In simple words:
+
+```text id="q3m8vy"
+final = cannot be changed
+```
+
+---
+
+# 🧩 `final` Can Be Used With
+
+1. Variable
+2. Method
+3. Class
+
+---
+
+# 🔷 1️⃣ Final Variable
+
+## 📌 Definition
+
+A variable declared as `final` cannot be changed once initialized.
+
+---
+
+# 💻 Example
+
+```java id="p7d1ku"
+class Demo {
+
+    final int x = 10;
+
+    void show() {
+
+        // x = 20; ❌ error
+
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+# 🧠 Meaning
+
+```text id="y4z8qp"
+Constant value
+```
+
+---
+
+# 🔥 Blank Final Variable
+
+```java id="x0m7cw"
+class Test {
+
+    final int x;
+
+    Test() {
+        x = 100;
+    }
+}
+```
+
+👉 Must initialize once
+
+---
+
+# 🔷 2️⃣ Final Method
+
+## 📌 Definition
+
+A `final` method cannot be overridden by child class.
+
+---
+
+# 💻 Example
+
+```java id="r5u2lh"
+class Animal {
+
+    final void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    // void sound() {} ❌ error
+}
+```
+
+---
+
+# 🧠 Purpose
+
+👉 Prevent changing parent method behavior
+
+---
+
+# 🔷 3️⃣ Final Class
+
+## 📌 Definition
+
+A `final` class cannot be inherited.
+
+---
+
+# 💻 Example
+
+```java id="t8n4qx"
+final class Animal {
+}
+
+// class Dog extends Animal {} ❌ error
+```
+
+---
+
+# 🧠 Purpose
+
+👉 Prevent inheritance
+
+---
+
+# 🔥 Real Example in Java
+
+```java id="v1j6mw"
+String class
+```
+
+👉 `String` is final
+
+Why?
+
+```text id="b9k2za"
+Security + immutability
+```
+
+---
+
+# 🔁 Summary Table
+
+| final Used With | Meaning             |
+| --------------- | ------------------- |
+| Variable        | Value cannot change |
+| Method          | Cannot override     |
+| Class           | Cannot inherit      |
+
+---
+
+# ⚠️ Important Notes
+
+## ✔ Final variable:
+
+* Must initialize once
+
+## ✔ Final method:
+
+* Inherited but not overridden
+
+## ✔ Final class:
+
+* No subclass possible
+
+---
+
+# 🔷 final vs finally vs finalize
+
+| Word       | Meaning                   |
+| ---------- | ------------------------- |
+| final      | Keyword                   |
+| finally    | Exception block           |
+| finalize() | Garbage collection method |
+
+---
+
+# 💻 Combined Example
+
+```java id="m6w1hf"
+final class A {
+
+    final int x = 10;
+
+    final void show() {
+        System.out.println(x);
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        A obj = new A();
+
+        obj.show();
+    }
+}
+```
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 The `final` keyword in Java is used to restrict modification. A final variable cannot be reassigned, a final method cannot be overridden, and a final class cannot be inherited.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is final variable?**
+Constant variable
+
+👉 **2. Can final method be overridden?**
+❌ No
+
+👉 **3. Can final class be inherited?**
+❌ No
+
+👉 **4. Why is String final?**
+Security and immutability
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="w7c3py"
+final variable → fixed value  
+final method → fixed behavior  
+final class → fixed structure
+```
+
+---
+

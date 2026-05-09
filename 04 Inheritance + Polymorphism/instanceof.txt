@@ -1,0 +1,246 @@
+# 🔷 `instanceof` Operator in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+`instanceof` is a **comparison operator** used to check whether an object belongs to a particular class or not.
+
+👉 It returns:
+
+* `true`
+* `false`
+
+---
+
+# 🧠 Simple Meaning
+
+```text id="3z4l8a"
+Checks object type at runtime
+```
+
+---
+
+# 🧩 Syntax
+
+```java id="x2r9vk"
+object instanceof ClassName
+```
+
+---
+
+# 💻 Basic Example
+
+```java id="m8v2pc"
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        System.out.println(d instanceof Dog);
+        System.out.println(d instanceof Animal);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="9p1tuw"
+true
+true
+```
+
+---
+
+# 🧠 Why Both Are `true`?
+
+Because:
+
+```text id="m4w0rs"
+Dog IS-A Dog
+Dog IS-A Animal
+```
+
+👉 Inheritance relationship
+
+---
+
+# 🔥 Example with False
+
+```java id="w7m1hz"
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+class Cat extends Animal {
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        System.out.println(d instanceof Cat);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="4z7jny"
+false
+```
+
+---
+
+# 🔷 Important Runtime Example
+
+```java id="x5v2bn"
+Animal a = new Dog();
+
+System.out.println(a instanceof Dog);
+System.out.println(a instanceof Animal);
+```
+
+---
+
+# 👉 Output
+
+```text id="h8c3qp"
+true
+true
+```
+
+👉 Because actual object = `Dog`
+
+---
+
+# 🔥 Why `instanceof` is Important?
+
+Used for:
+
+* Runtime type checking
+* Safe type casting
+* Polymorphism handling
+
+---
+
+# 💻 Example with Type Casting
+
+```java id="u6k1yr"
+Animal a = new Dog();
+
+if (a instanceof Dog) {
+
+    Dog d = (Dog) a;
+
+    System.out.println("Safe casting");
+}
+```
+
+---
+
+# ⚠️ Without `instanceof`
+
+```java id="j3n0vx"
+Animal a = new Animal();
+
+Dog d = (Dog) a; // ❌ Runtime error
+```
+
+👉 Causes:
+
+```text id="0q8sye"
+ClassCastException
+```
+
+---
+
+# 🔥 Null with `instanceof`
+
+```java id="1l6wzk"
+Dog d = null;
+
+System.out.println(d instanceof Dog);
+```
+
+---
+
+# 👉 Output
+
+```text id="2o7xmn"
+false
+```
+
+👉 `null` is not an object
+
+---
+
+# 🔁 `instanceof` and Inheritance
+
+| Condition                        | Result  |
+| -------------------------------- | ------- |
+| Child object checked with parent | ✔ true  |
+| Parent object checked with child | ❌ false |
+
+---
+
+# 💻 Example
+
+```java id="3d1rfc"
+Animal a = new Dog();
+
+System.out.println(a instanceof Animal); // true
+System.out.println(a instanceof Dog);    // true
+```
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 The `instanceof` operator in Java is used to check whether an object is an instance of a particular class or subclass. It returns true if the object belongs to the specified type; otherwise false.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What does instanceof do?**
+Checks object type
+
+👉 **2. Return type of instanceof?**
+boolean
+
+👉 **3. Does instanceof work with null?**
+✔ Returns false
+
+👉 **4. Why use instanceof?**
+Safe casting and runtime checking
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="h9q4ks"
+instanceof checks actual object type
+```
+
+Example:
+
+```java id="q1u8yf"
+Animal a = new Dog();
+```
+
