@@ -1,0 +1,187 @@
+# 🔷 `super` Keyword in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+`super` is a **reference variable** used to refer to the **immediate parent class object**.
+
+👉 In simple words:
+`super` = parent class
+
+---
+
+# 🧠 Why Use `super`?
+
+Used to:
+
+1. Access parent class variables
+2. Call parent class methods
+3. Call parent class constructor
+
+---
+
+# 🧩 1️⃣ Access Parent Class Variable
+
+👉 Used when parent and child have same variable name
+
+---
+
+## 💻 Example
+
+```java id="nmdk09"
+class Animal {
+    String color = "White";
+}
+
+class Dog extends Animal {
+    String color = "Black";
+
+    void display() {
+        System.out.println(super.color); // parent variable
+        System.out.println(color);       // child variable
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.display();
+    }
+}
+```
+
+---
+
+## 👉 Output
+
+```text id="x1pqk5"
+White
+Black
+```
+
+---
+
+# 🧩 2️⃣ Call Parent Class Method
+
+---
+
+## 💻 Example
+
+```java id="6jlwm0"
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+    void display() {
+        super.sound(); // parent method
+        sound();       // child method
+    }
+}
+```
+
+---
+
+# 🧩 3️⃣ Call Parent Constructor (MOST IMPORTANT 🔥)
+
+---
+
+## 💻 Example
+
+```java id="b3q0wm"
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // calls parent constructor
+        System.out.println("Dog constructor");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+```
+
+---
+
+## 👉 Output
+
+```text id="nyv0u9"
+Animal constructor
+Dog constructor
+```
+
+---
+
+# 🧠 Important Rule
+
+👉 `super()` must be:
+
+* First statement in constructor
+
+---
+
+# 🔁 `this` vs `super`
+
+| Feature     | `this`         | `super`       |
+| ----------- | -------------- | ------------- |
+| Refers to   | Current object | Parent object |
+| Access      | Current class  | Parent class  |
+| Constructor | `this()`       | `super()`     |
+
+---
+
+# ⚠️ Important Notes
+
+* ✔ Used only in inheritance
+* ✔ Access immediate parent only
+* ❌ Cannot access private parent members directly
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 The `super` keyword in Java refers to the immediate parent class object. It is used to access parent class variables, methods, and constructors.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What does `super` refer to?**
+Immediate parent class
+
+👉 **2. Why use `super()`?**
+To call parent constructor
+
+👉 **3. Can `super()` and `this()` be used together?**
+❌ No, both must be first statement
+
+👉 **4. Can super access private members?**
+❌ No
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important use:
+
+```java id="40nvlu"
+super();
+```
+
+👉 Constructor calling is asked very frequently in exams/viva.
+
+---

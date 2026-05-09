@@ -1,0 +1,262 @@
+# 🔷 Inheritance in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+**Inheritance** is an OOP concept in which one class acquires the properties and methods of another class.
+
+👉 In simple words:
+One class **inherits** features of another class.
+
+---
+
+# 🧠 Why Use Inheritance?
+
+* ✔ Code reusability
+* ✔ Reduces duplication
+* ✔ Supports real-world relationships
+* ✔ Improves maintainability
+
+---
+
+# 🧩 Important Terms
+
+| Term                      | Meaning               |
+| ------------------------- | --------------------- |
+| Parent class / Superclass | Class being inherited |
+| Child class / Subclass    | Class that inherits   |
+| `extends` keyword         | Used for inheritance  |
+
+---
+
+# 💻 Basic Syntax
+
+```java id="p90d79"
+class Parent {
+    // parent members
+}
+
+class Child extends Parent {
+    // child members
+}
+```
+
+---
+
+# 🔷 Types of Inheritance in Java
+
+---
+
+# 1️⃣ Single Inheritance
+
+👉 One child inherits from one parent
+
+---
+
+## 💻 Example
+
+```java id="6uxpk9"
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+
+        d.eat();
+        d.bark();
+    }
+}
+```
+
+---
+
+## 🧠 Structure
+
+```text id="4rwypd"
+Animal
+   ↓
+ Dog
+```
+
+---
+
+# 2️⃣ Multilevel Inheritance
+
+👉 A class inherits from a class that already inherits another class
+
+---
+
+## 💻 Example
+
+```java id="by06v5"
+class Animal {
+    void eat() {
+        System.out.println("Eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking");
+    }
+}
+
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Weeping");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Puppy p = new Puppy();
+
+        p.eat();
+        p.bark();
+        p.weep();
+    }
+}
+```
+
+---
+
+## 🧠 Structure
+
+```text id="lsq9p0"
+Animal
+   ↓
+ Dog
+   ↓
+Puppy
+```
+
+---
+
+# 3️⃣ Hierarchical Inheritance
+
+👉 Multiple child classes inherit from one parent
+
+---
+
+## 💻 Example
+
+```java id="1d6smw"
+class Animal {
+    void eat() {
+        System.out.println("Eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Meowing");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+        Cat c = new Cat();
+
+        d.eat();
+        d.bark();
+
+        c.eat();
+        c.meow();
+    }
+}
+```
+
+---
+
+## 🧠 Structure
+
+```text id="6crwh4"
+      Animal
+      /    \
+    Dog    Cat
+```
+
+---
+
+# ⚠️ Important Notes
+
+* Java does **not support multiple inheritance with classes**
+* Use `extends` keyword
+* Private members are not directly accessible
+
+---
+
+# 🔁 Types Supported in Java
+
+| Type         | Supported?        |
+| ------------ | ----------------- |
+| Single       | ✔ Yes             |
+| Multilevel   | ✔ Yes             |
+| Hierarchical | ✔ Yes             |
+| Multiple     | ❌ No (with class) |
+
+---
+
+# 🧠 `super` Keyword (Related 🔥)
+
+Used to access parent class members
+
+```java id="h0mwjq"
+super.methodName();
+```
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Inheritance is the mechanism by which one class acquires the properties and methods of another class using the `extends` keyword. It promotes code reusability and supports hierarchical relationships.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is inheritance?**
+Acquiring parent properties
+
+👉 **2. Keyword used?**
+`extends`
+
+👉 **3. Does Java support multiple inheritance?**
+❌ Not with classes
+
+👉 **4. Advantage of inheritance?**
+Code reusability
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="dlx7d8"
+IS-A relationship
+```
+
+Example:
+
+```text id="gm6hlz"
+Dog IS-A Animal
+```
+

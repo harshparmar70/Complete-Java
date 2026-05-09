@@ -1,0 +1,209 @@
+# 🔷 Method Overriding in Java
+
+## 📌 Definition
+
+Method overriding is a feature in Java where a **child class redefines a method of the parent class** using the **same method name and same parameters**.
+
+👉 The child class gives its **own implementation** of the inherited method.
+
+---
+
+# 🧠 Simple Meaning
+
+👉 Parent class already has a method
+👉 Child class changes that method behavior
+
+---
+
+# 🧩 Syntax
+
+```java id="9g6vbh"
+class Parent {
+
+    void show() {
+    }
+}
+
+class Child extends Parent {
+
+    @Override
+    void show() {
+    }
+}
+```
+
+---
+
+# 💻 Basic Example
+
+```java id="42jlwm"
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+    }
+}
+```
+
+---
+
+## 👉 Output
+
+```text id="i2m11p"
+Dog barks
+```
+
+---
+
+# 🧠 What Happened Here?
+
+👉 Parent method:
+
+```java id="jlwmwq"
+sound()
+```
+
+👉 Child class overrides it:
+
+```java id="vf9uk7"
+sound()
+```
+
+👉 So child version executes
+
+---
+
+# 🔥 Runtime Polymorphism
+
+```java id="0xyyva"
+Animal a = new Dog();
+
+a.sound();
+```
+
+👉 Output:
+
+```text id="jlwm5t"
+Dog barks
+```
+
+👉 JVM decides at runtime which method to call.
+
+This is called:
+
+```text id="8mfm6r"
+Dynamic Method Dispatch
+```
+
+---
+
+# 🔷 Rules of Method Overriding
+
+## ✔ Required
+
+* Same method name
+* Same parameters
+* Inheritance relationship
+
+---
+
+## ❌ Cannot Override
+
+* `final` methods
+* `private` methods
+* `static` methods
+
+---
+
+# 🔷 `@Override` Annotation
+
+```java id="w9kpzv"
+@Override
+void sound() {
+}
+```
+
+👉 Helps compiler check overriding errors
+
+---
+
+# 🔁 Method Overloading vs Overriding
+
+| Feature     | Overloading  | Overriding |
+| ----------- | ------------ | ---------- |
+| Parameters  | Different    | Same       |
+| Inheritance | Not needed   | Required   |
+| Binding     | Compile-time | Runtime    |
+
+---
+
+# 🔥 Using `super`
+
+```java id="1ce2j9"
+class Animal {
+
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        super.sound();
+        System.out.println("Dog sound");
+    }
+}
+```
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Method overriding is the process in which a child class provides its own implementation of a method already defined in the parent class using the same method signature. It supports runtime polymorphism.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is method overriding?**
+Redefining inherited method
+
+👉 **2. Which polymorphism?**
+Runtime polymorphism
+
+👉 **3. Is inheritance necessary?**
+✔ Yes
+
+👉 **4. Can static methods be overridden?**
+❌ No
+
+👉 **5. What is dynamic method dispatch?**
+Runtime method selection
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+Overriding = Same method + inheritance
+
+

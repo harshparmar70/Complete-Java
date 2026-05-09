@@ -1,0 +1,192 @@
+# 🔷 Polymorphism in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+**Polymorphism** means **“many forms”**.
+
+👉 In Java, polymorphism allows **one method/object to behave differently in different situations**.
+
+---
+
+# 🧠 Real-Life Example
+
+👉 Person behavior:
+
+* Teacher → teaches
+* Student → studies
+
+Same person → different forms
+
+---
+
+# 🧩 Types of Polymorphism in Java
+
+Java supports **2 types**:
+
+1. **Compile-Time Polymorphism**
+   (Method Overloading)
+
+2. **Run-Time Polymorphism**
+   (Method Overriding)
+
+---
+
+# 🔷 1️⃣ Compile-Time Polymorphism (Method Overloading)
+
+## 📌 Definition
+
+Same method name with:
+
+* Different parameters
+* Different number/type/order of arguments
+
+👉 Decision made at **compile time**
+
+---
+
+## 💻 Example
+
+```java id="mdsvnm"
+class MathOperation {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        MathOperation m = new MathOperation();
+
+        System.out.println(m.add(10, 20));
+        System.out.println(m.add(10, 20, 30));
+    }
+}
+```
+
+---
+
+# 🔷 2️⃣ Run-Time Polymorphism (Method Overriding)
+
+## 📌 Definition
+
+Child class provides its own implementation of parent method.
+
+👉 Decision made at **runtime**
+
+---
+
+## 💻 Example
+
+```java id="0yxj6y"
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+
+        a.sound();
+    }
+}
+```
+
+---
+
+## 👉 Output
+
+```text id="am86kl"
+Dog barks
+```
+
+👉 Parent reference → child object
+👉 Runtime decides method
+
+---
+
+# 🧠 Important Concept
+
+```java id="qmcthz"
+Animal a = new Dog();
+```
+
+👉 Called:
+
+* Upcasting
+* Dynamic method dispatch
+
+---
+
+# 🔁 Overloading vs Overriding
+
+| Feature          | Overloading  | Overriding   |
+| ---------------- | ------------ | ------------ |
+| Same method name | ✔ Yes        | ✔ Yes        |
+| Parameters       | Different    | Same         |
+| Class            | Same class   | Parent-child |
+| Binding          | Compile time | Runtime      |
+
+---
+
+# ⚠️ Important Rules
+
+## ✔ Overloading
+
+* Different parameters required
+
+## ✔ Overriding
+
+* Same method signature
+* Inheritance required
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Polymorphism is the ability of one method or object to take many forms. In Java, it is achieved through method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is polymorphism?**
+Many forms
+
+👉 **2. Types of polymorphism?**
+Compile-time and runtime
+
+👉 **3. Which concept uses inheritance?**
+Method overriding
+
+👉 **4. Which is faster?**
+Compile-time polymorphism
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="omx9c1"
+Overloading → Compile time  
+Overriding → Runtime
+```
+
+---
+
+If you want next:

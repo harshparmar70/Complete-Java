@@ -1,0 +1,195 @@
+# 🔷 Method Overloading in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+**Method Overloading** means defining **multiple methods with the same name** in the same class but with **different parameters**.
+
+👉 It is an example of:
+
+```text
+Compile-Time Polymorphism
+```
+
+---
+
+# 🧠 Why Use Method Overloading?
+
+* ✔ Increases readability
+* ✔ Reuse same method name
+* ✔ Different ways to perform similar task
+
+---
+
+# 🧩 Rules for Method Overloading
+
+Methods must differ by:
+
+✔ Number of parameters
+✔ Type of parameters
+✔ Order of parameters
+
+---
+
+# ❌ Return type alone cannot overload
+
+---
+
+# 🔷 1️⃣ Overloading by Number of Parameters
+
+## 💻 Example
+
+```java id="rf4q8r"
+class MathOperation {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+```
+
+---
+
+# 🔷 2️⃣ Overloading by Data Type
+
+## 💻 Example
+
+```java id="y4ce64"
+class Demo {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+---
+
+# 🔷 3️⃣ Overloading by Order of Parameters
+
+## 💻 Example
+
+```java id="4ym3qo"
+class Demo {
+
+    void show(int a, String b) {
+        System.out.println(a + " " + b);
+    }
+
+    void show(String b, int a) {
+        System.out.println(b + " " + a);
+    }
+}
+```
+
+---
+
+# ❌ Invalid Overloading Example
+
+```java id="jlwmkp"
+class Demo {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(int a, int b) { // ❌ error
+        return a + b;
+    }
+}
+```
+
+👉 Only return type changed → not allowed
+
+---
+
+# 🧠 How Java Decides?
+
+👉 Compiler checks:
+
+* Method name
+* Parameters
+
+This process is called:
+
+```text
+Static Binding / Compile-Time Binding
+```
+
+---
+
+# 💻 Full Example
+
+```java id="8q1hmw"
+class Print {
+
+    void display(int a) {
+        System.out.println(a);
+    }
+
+    void display(String s) {
+        System.out.println(s);
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Print p = new Print();
+
+        p.display(10);
+        p.display("Java");
+    }
+}
+```
+
+---
+
+# 🔁 Method Overloading vs Overriding
+
+| Feature      | Overloading  | Overriding   |
+| ------------ | ------------ | ------------ |
+| Class        | Same class   | Parent-child |
+| Parameters   | Different    | Same         |
+| Polymorphism | Compile-time | Runtime      |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Method overloading is the process of defining multiple methods with the same name in the same class but with different parameters. It supports compile-time polymorphism.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is method overloading?**
+Same method name, different parameters
+
+👉 **2. Is return type enough for overloading?**
+❌ No
+
+👉 **3. Which polymorphism type?**
+Compile-time polymorphism
+
+👉 **4. Can constructors be overloaded?**
+✔ Yes
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text
+Name same  
+Parameters different
+```
+
