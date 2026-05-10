@@ -1,0 +1,330 @@
+# 🔷 StringBuilder in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+`StringBuilder` is a class in Java used to create **mutable strings**.
+
+👉 Mutable means:
+
+```text id="t7m2qx"
+String content can be modified
+```
+
+without creating new objects.
+
+---
+
+# 🧠 Why StringBuilder Introduced?
+
+`String` objects are:
+
+```text id="x5k8vn"
+Immutable
+```
+
+Every modification creates a new object.
+
+👉 This reduces performance.
+
+So Java introduced:
+
+```text id="g1q4wy"
+StringBuilder
+```
+
+for faster string operations.
+
+---
+
+# 🔷 Important Point
+
+```text id="u3m7pk"
+StringBuilder is NOT thread-safe
+```
+
+👉 Because methods are not synchronized.
+
+---
+
+# 🔷 StringBuilder vs StringBuffer
+
+| Feature     | StringBuffer | StringBuilder |
+| ----------- | ------------ | ------------- |
+| Mutable     | ✔ Yes        | ✔ Yes         |
+| Thread Safe | ✔ Yes        | ❌ No          |
+| Speed       | Slower       | Faster        |
+
+---
+
+# 🔥 Basic Example
+
+```java id="m8v2qp"
+StringBuilder sb = new StringBuilder("Java");
+
+sb.append(" Programming");
+
+System.out.println(sb);
+```
+
+---
+
+# 👉 Output
+
+```text id="p4x7wm"
+Java Programming
+```
+
+---
+
+# 🧠 Why Original String Changed?
+
+Because:
+
+```text id="n6k1zr"
+StringBuilder modifies same object
+```
+
+---
+
+# 🔷 Important Methods
+
+---
+
+# 1️⃣ append()
+
+Adds text at end
+
+```java id="v2m8qy"
+sb.append(" Language");
+```
+
+---
+
+# 2️⃣ insert()
+
+Insert text at specific index
+
+```java id="w7p3xn"
+sb.insert(4, " Programming");
+```
+
+---
+
+# 3️⃣ replace()
+
+Replace characters
+
+```java id="f5k9vc"
+sb.replace(0, 4, "Python");
+```
+
+---
+
+# 4️⃣ delete()
+
+Delete characters
+
+```java id="a8q2wr"
+sb.delete(0, 4);
+```
+
+---
+
+# 5️⃣ reverse()
+
+Reverse string
+
+```java id="z1m6xp"
+sb.reverse();
+```
+
+---
+
+# 💻 Full Example
+
+```java id="r4v9qt"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        StringBuilder sb = new StringBuilder("Java");
+
+        sb.append(" Programming");
+
+        System.out.println(sb);
+
+        sb.insert(4, " Language");
+
+        System.out.println(sb);
+
+        sb.reverse();
+
+        System.out.println(sb);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="y6k2wp"
+Java Programming
+Java Language Programming
+gnimmargorP egaugnaL avaJ
+```
+
+---
+
+# 🔷 Capacity in StringBuilder
+
+Default capacity:
+
+```text id="k9x3vn"
+16 + initial string length
+```
+
+---
+
+# 💻 Example
+
+```java id="h7m1qc"
+StringBuilder sb = new StringBuilder("Java");
+```
+
+Length:
+
+```text id="c5p8wr"
+4
+```
+
+Capacity:
+
+```text id="u2n6zy"
+20
+```
+
+---
+
+# 💻 Check Capacity
+
+```java id="m4v7qx"
+System.out.println(sb.capacity());
+```
+
+---
+
+# 🔷 Performance Advantage
+
+---
+
+## String
+
+```java id="q1z8pk"
+String s = "Java";
+
+s = s + " Programming";
+```
+
+👉 Creates new object
+
+---
+
+## StringBuilder
+
+```java id="t3m5vn"
+sb.append(" Programming");
+```
+
+👉 Modifies same object
+
+👉 Faster + memory efficient
+
+---
+
+# 🔥 Best Use Case
+
+Use `StringBuilder` when:
+
+* Frequent string modifications
+* Single-threaded environment
+* High performance required
+
+---
+
+# 🔁 String vs StringBuffer vs StringBuilder
+
+| Feature     | String | StringBuffer | StringBuilder |
+| ----------- | ------ | ------------ | ------------- |
+| Mutable     | ❌      | ✔            | ✔             |
+| Thread Safe | ✔      | ✔            | ❌             |
+| Speed       | Slow   | Medium       | Fast          |
+
+---
+
+# 🔷 Thread Safety Concept
+
+## StringBuffer
+
+Methods are:
+
+```text id="p8k4wm"
+synchronized
+```
+
+Safe in multithreading
+
+---
+
+## StringBuilder
+
+Methods are:
+
+```text id="x6q1zr"
+not synchronized
+```
+
+👉 Faster but not thread-safe
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 StringBuilder is a mutable class in Java used for modifying strings efficiently without creating new objects. It is faster than StringBuffer because it is not thread-safe.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Is StringBuilder mutable?**
+✔ Yes
+
+👉 **2. Is StringBuilder thread-safe?**
+❌ No
+
+👉 **3. Why faster than StringBuffer?**
+No synchronization
+
+👉 **4. Default capacity?**
+16 + string length
+
+👉 **5. Best use of StringBuilder?**
+Frequent string modification
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="v9m2qx"
+StringBuffer → thread-safe  
+StringBuilder → faster
+```
+
+👉 Interview favorite question:
+
+```text id="f3k7wp"
+Difference between StringBuffer and StringBuilder
+```
+

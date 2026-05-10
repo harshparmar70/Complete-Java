@@ -1,0 +1,318 @@
+# 🔷 StringBuffer in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+`StringBuffer` is a class in Java used to create **mutable strings**.
+
+👉 Mutable means:
+
+```text id="x8p2vn"
+String content can be changed
+```
+
+---
+
+# 🧠 Why StringBuffer Needed?
+
+Normal `String` objects are:
+
+```text id="u5m1zk"
+Immutable
+```
+
+Every modification creates a new object.
+
+👉 This wastes:
+
+* Memory
+* Time
+
+So Java introduced:
+
+```text id="n7q4yb"
+StringBuffer
+```
+
+---
+
+# 🔷 String vs StringBuffer
+
+| Feature          | String | StringBuffer |
+| ---------------- | ------ | ------------ |
+| Mutable          | ❌ No   | ✔ Yes        |
+| Memory Efficient | ❌ Less | ✔ More       |
+| Thread Safe      | ✔ Yes  | ✔ Yes        |
+| Performance      | Slow   | Faster       |
+
+---
+
+# 🔥 Basic Example
+
+## 💻 String Example
+
+```java id="k4v8tm"
+String s = "Java";
+
+s.concat(" Programming");
+
+System.out.println(s);
+```
+
+---
+
+## 👉 Output
+
+```text id="p6x2wr"
+Java
+```
+
+👉 Original string unchanged
+
+---
+
+# 💻 StringBuffer Example
+
+```java id="d9n5qc"
+StringBuffer sb = new StringBuffer("Java");
+
+sb.append(" Programming");
+
+System.out.println(sb);
+```
+
+---
+
+## 👉 Output
+
+```text id="m3z7kp"
+Java Programming
+```
+
+👉 Original object modified
+
+---
+
+# 🔷 How StringBuffer Works
+
+```java id="f1r8wy"
+StringBuffer sb = new StringBuffer("Java");
+```
+
+👉 Creates mutable character sequence
+
+---
+
+## 🔹 append()
+
+Adds text at end
+
+```java id="t6v4xn"
+sb.append(" Programming");
+```
+
+---
+
+## 🔹 insert()
+
+Insert at specific index
+
+```java id="g2m9qc"
+sb.insert(4, " Language");
+```
+
+---
+
+## 👉 Output
+
+```text id="y8k3zp"
+Java Language
+```
+
+---
+
+## 🔹 replace()
+
+```java id="r7p1mw"
+sb.replace(0, 4, "Python");
+```
+
+---
+
+## 🔹 delete()
+
+```java id="h5x8qn"
+sb.delete(0, 4);
+```
+
+---
+
+## 🔹 reverse()
+
+```java id="j9w2vt"
+sb.reverse();
+```
+
+---
+
+# 💻 Complete Example
+
+```java id="z4k7pm"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        StringBuffer sb = new StringBuffer("Java");
+
+        sb.append(" Programming");
+
+        sb.insert(4, " Language");
+
+        System.out.println(sb);
+
+        sb.reverse();
+
+        System.out.println(sb);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="u1m6xr"
+Java Language Programming
+gnimmargorP egaugnaL avaJ
+```
+
+---
+
+# 🔷 Capacity Concept (VERY IMPORTANT)
+
+---
+
+## 📌 Default Capacity
+
+```text id="q7v3mp"
+16 + string length
+```
+
+---
+
+# 💻 Example
+
+```java id="c2x9wr"
+StringBuffer sb = new StringBuffer("Java");
+```
+
+Length:
+
+```text id="m8k1qy"
+4
+```
+
+Capacity:
+
+```text id="v5n7zp"
+16 + 4 = 20
+```
+
+---
+
+# 💻 Check Capacity
+
+```java id="n1q8vy"
+System.out.println(sb.capacity());
+```
+
+---
+
+# 🔷 Thread Safety
+
+👉 StringBuffer methods are:
+
+```text id="f4m2wk"
+Synchronized
+```
+
+Meaning:
+
+* Safe for multithreading
+* Slightly slower
+
+---
+
+# 🔷 Memory Advantage
+
+---
+
+## String
+
+```java id="a9x5tr"
+String s = "Java";
+
+s = s + " Programming";
+```
+
+👉 Creates NEW object
+
+---
+
+## StringBuffer
+
+```java id="p3v7mz"
+sb.append(" Programming");
+```
+
+👉 Modifies SAME object
+
+---
+
+# 🔁 String vs StringBuffer vs StringBuilder
+
+| Feature     | String | StringBuffer | StringBuilder |
+| ----------- | ------ | ------------ | ------------- |
+| Mutable     | ❌      | ✔            | ✔             |
+| Thread Safe | ✔      | ✔            | ❌             |
+| Speed       | Slow   | Medium       | Fast          |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 StringBuffer is a mutable class in Java used to modify strings without creating new objects. It is thread-safe and provides methods like append(), insert(), delete(), and reverse().
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Is StringBuffer mutable?**
+✔ Yes
+
+👉 **2. Why faster than String?**
+No new object creation
+
+👉 **3. Is StringBuffer thread-safe?**
+✔ Yes
+
+👉 **4. Default capacity?**
+16 + string length
+
+👉 **5. Which is faster: StringBuffer or StringBuilder?**
+✔ StringBuilder
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="y2k6wp"
+String → immutable  
+StringBuffer → mutable + thread-safe
+```
+
+👉 Use StringBuffer:
+
+* Frequent string modifications
+* Multithreading environment 🔥
