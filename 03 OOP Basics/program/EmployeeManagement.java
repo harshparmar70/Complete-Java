@@ -4,7 +4,8 @@ import java.util.Scanner;
 class Employee {
 
     // Encapsulated variables
-    private int empId;
+    private int 
+    ;
     private String name;
     private double salary;
     private String department;

@@ -1,0 +1,316 @@
+# 🔷 String in Java (Complete + Exam-Ready)
+
+## 📌 Definition
+
+A **String** in Java is a sequence of characters used to store text.
+
+👉 Example:
+
+```java id="yl89qg"
+String name = "Harsh";
+```
+
+---
+
+# 🧠 Important Point
+
+```text id="7l0w2p"
+Strings are objects in Java
+```
+
+Even though they look like primitive types.
+
+---
+
+# 🔷 Ways to Create String
+
+---
+
+# 1️⃣ Using String Literal
+
+```java id="e2r6yn"
+String s1 = "Java";
+```
+
+👉 Stored in:
+
+```text id="4d8zxt"
+String Constant Pool (SCP)
+```
+
+---
+
+# 2️⃣ Using `new` Keyword
+
+```java id="w5u3ck"
+String s2 = new String("Java");
+```
+
+👉 Stored in:
+
+```text id="2m7vql"
+Heap memory
+```
+
+---
+
+# 🔥 String Constant Pool (VERY IMPORTANT)
+
+Java stores string literals in a special memory area called:
+
+```text id="g1n5wh"
+String Constant Pool
+```
+
+Purpose:
+
+* Save memory
+* Reuse same strings
+
+---
+
+# 💻 Example
+
+```java id="q8z4ft"
+String s1 = "Java";
+String s2 = "Java";
+
+System.out.println(s1 == s2);
+```
+
+---
+
+# 👉 Output
+
+```text id="0v3jpk"
+true
+```
+
+👉 Both point to same SCP object
+
+---
+
+# 🔷 Using `new`
+
+```java id="v6x2md"
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);
+```
+
+---
+
+# 👉 Output
+
+```text id="m4k8zs"
+false
+```
+
+👉 Different heap objects
+
+---
+
+# 🔥 String is Immutable
+
+## 📌 Definition
+
+```text id="x9q2lw"
+Immutable = cannot be changed
+```
+
+---
+
+# 💻 Example
+
+```java id="y4v1tb"
+String s = "Java";
+
+s.concat(" Programming");
+
+System.out.println(s);
+```
+
+---
+
+# 👉 Output
+
+```text id="8n6zxr"
+Java
+```
+
+👉 Original string unchanged
+
+---
+
+# ✔ Correct Way
+
+```java id="u2j7mk"
+s = s.concat(" Programming");
+```
+
+---
+
+# 🔷 Important String Methods
+
+---
+
+## 1️⃣ length()
+
+```java id="z5w0pc"
+String s = "Java";
+
+System.out.println(s.length());
+```
+
+👉 Output:
+
+```text id="d1q8yf"
+4
+```
+
+---
+
+## 2️⃣ charAt()
+
+```java id="g3k9vs"
+System.out.println(s.charAt(1));
+```
+
+👉 Output:
+
+```text id="m0v2zl"
+a
+```
+
+---
+
+## 3️⃣ concat()
+
+```java id="f6r1xn"
+String s1 = "Java";
+String s2 = " Programming";
+
+System.out.println(s1.concat(s2));
+```
+
+---
+
+## 4️⃣ equals()
+
+```java id="n7c4qp"
+String s1 = "Java";
+String s2 = "Java";
+
+System.out.println(s1.equals(s2));
+```
+
+👉 Output:
+
+```text id="w2k8mb"
+true
+```
+
+---
+
+# 🔥 `==` vs `equals()` (VERY IMPORTANT)
+
+| Operator   | Checks           |
+| ---------- | ---------------- |
+| `==`       | Memory reference |
+| `equals()` | Actual content   |
+
+---
+
+# 💻 Example
+
+```java id="r9t1wx"
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+```
+
+---
+
+# 👉 Output
+
+```text id="c6v0zn"
+false
+true
+```
+
+---
+
+# 🔷 String Methods Table
+
+| Method        | Purpose          |
+| ------------- | ---------------- |
+| length()      | Length           |
+| charAt()      | Character access |
+| concat()      | Join strings     |
+| equals()      | Compare content  |
+| toUpperCase() | Uppercase        |
+| toLowerCase() | Lowercase        |
+| substring()   | Extract part     |
+| contains()    | Check text       |
+
+---
+
+# 🔷 String Memory Diagram
+
+```text id="x3r7kp"
+String s1 = "Java";
+String s2 = "Java";
+```
+
+```text id="q1v8zm"
+SCP:
+"Java"
+
+s1 ----|
+s2 ----|
+```
+
+---
+
+# 🔷 String vs StringBuffer vs StringBuilder
+
+| Feature     | String | StringBuffer | StringBuilder |
+| ----------- | ------ | ------------ | ------------- |
+| Mutable     | ❌ No   | ✔ Yes        | ✔ Yes         |
+| Thread Safe | ✔ Yes  | ✔ Yes        | ❌ No          |
+| Speed       | Slow   | Medium       | Fast          |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 A String in Java is an object that represents a sequence of characters. Strings are immutable and stored in the String Constant Pool for memory optimization.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Is String primitive?**
+❌ No, object
+
+👉 **2. What is immutable?**
+Cannot change
+
+👉 **3. Difference between `==` and `equals()`?**
+Reference vs content
+
+👉 **4. What is String Constant Pool?**
+Special memory area for literals
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important interview concepts:
+
+* Immutable strings
+* SCP
+* `==` vs `equals()`
