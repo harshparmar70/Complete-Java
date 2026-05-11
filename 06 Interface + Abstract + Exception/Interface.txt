@@ -1,0 +1,362 @@
+# 🔷 Interface in Java (Complete + Exam-Ready)
+
+# 📌 Definition
+
+An **Interface** in Java is a blueprint of a class that contains:
+
+* abstract methods
+* constants
+
+👉 It is used to achieve:
+
+```text id="u7k3wp"
+Abstraction + Multiple Inheritance
+```
+
+---
+
+# 🧠 Simple Meaning
+
+Interface tells:
+
+```text id="x2m8vq"
+WHAT to do
+```
+
+Class tells:
+
+```text id="r5q1wr"
+HOW to do
+```
+
+---
+
+# 🔷 Why Interface Needed?
+
+Used for:
+
+* 100% abstraction
+* Multiple inheritance
+* Standard design
+
+---
+
+# 🔷 Important Points
+
+## ✔ Interface methods are:
+
+```text id="m9k4zy"
+public abstract
+```
+
+by default
+
+---
+
+## ✔ Interface variables are:
+
+```text id="p3m7qn"
+public static final
+```
+
+by default
+
+---
+
+# 🔷 Syntax
+
+```java id="v6q2wp"
+interface InterfaceName {
+
+    void show();
+}
+```
+
+---
+
+# 🔷 Implementing Interface
+
+Use keyword:
+
+```java id="n1m8vx"
+implements
+```
+
+---
+
+# 💻 Basic Example
+
+```java id="f4q7wr"
+interface Animal {
+
+    void sound();
+}
+
+class Dog implements Animal {
+
+    public void sound() {
+
+        System.out.println("Dog barks");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="x8m2qy"
+Dog barks
+```
+
+---
+
+# 🧠 Important Rule
+
+When implementing interface methods:
+
+```text id="w5q9vn"
+Method must be public
+```
+
+Because interface methods are public by default.
+
+---
+
+# 🔷 Interface Variables
+
+---
+
+# 💻 Example
+
+```java id="u2m6wr"
+interface Demo {
+
+    int x = 10;
+}
+```
+
+Internally:
+
+```java id="t7q1vp"
+public static final int x = 10;
+```
+
+👉 Value cannot change
+
+---
+
+# 🔷 Multiple Inheritance Using Interface
+
+Java does NOT support:
+
+```text id="k4m8zy"
+Multiple inheritance with classes
+```
+
+BUT supports:
+
+```text id="r9q3wp"
+Multiple inheritance with interfaces
+```
+
+---
+
+# 💻 Example
+
+```java id="m1v7qx"
+interface A {
+
+    void show();
+}
+
+interface B {
+
+    void display();
+}
+
+class Test implements A, B {
+
+    public void show() {
+        System.out.println("Show");
+    }
+
+    public void display() {
+        System.out.println("Display");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Test t = new Test();
+
+        t.show();
+        t.display();
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="y6m2wr"
+Show
+Display
+```
+
+---
+
+# 🔷 Interface vs Class
+
+| Feature              | Interface | Class           |
+| -------------------- | --------- | --------------- |
+| Object Creation      | ❌ No      | ✔ Yes           |
+| Constructors         | ❌ No      | ✔ Yes           |
+| Methods              | Abstract  | Normal/Abstract |
+| Multiple Inheritance | ✔ Yes     | ❌ No            |
+
+---
+
+# 🔷 Interface vs Abstract Class
+
+| Feature     | Interface                      | Abstract Class    |
+| ----------- | ------------------------------ | ----------------- |
+| Methods     | Fully abstract (traditionally) | Abstract + normal |
+| Variables   | final/static                   | Any type          |
+| Inheritance | Multiple                       | Single            |
+
+---
+
+# 🔷 Default Methods (Java 8)
+
+Interfaces can contain:
+
+```java id="q5m9vn"
+default methods
+```
+
+---
+
+# 💻 Example
+
+```java id="p8q4wr"
+interface Demo {
+
+    default void show() {
+
+        System.out.println("Default Method");
+    }
+}
+```
+
+---
+
+# 🔷 Static Methods in Interface
+
+```java id="x3m7vp"
+interface Demo {
+
+    static void display() {
+
+        System.out.println("Static Method");
+    }
+}
+```
+
+Call using:
+
+```java id="w1q8zy"
+Demo.display();
+```
+
+---
+
+# 🔷 Functional Interface
+
+Interface with:
+
+```text id="u6m2wr"
+Only one abstract method
+```
+
+Example:
+
+```java id="t9q5vn"
+Runnable
+```
+
+---
+
+# 🔥 Real-Life Example
+
+Interface:
+
+```text id="m4k7wp"
+Payment
+```
+
+Methods:
+
+```java id="r2m8qx"
+pay()
+```
+
+Classes:
+
+```text id="x7q1vn"
+CreditCard  
+UPI  
+NetBanking
+```
+
+Each gives different implementation.
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 An interface in Java is a blueprint of a class that contains abstract methods and constants. It is used to achieve abstraction and multiple inheritance.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Can we create object of interface?**
+❌ No
+
+👉 **2. Which keyword used?**
+`implements`
+
+👉 **3. Does Java support multiple inheritance?**
+✔ Through interfaces
+
+👉 **4. Are interface methods public?**
+✔ Yes
+
+👉 **5. Can interface have constructors?**
+❌ No
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="v8m3wr"
+extends → class inheritance  
+implements → interface inheritance
+```
+

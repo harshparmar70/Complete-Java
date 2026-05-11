@@ -1,0 +1,369 @@
+# 🔷 Abstract Class in Java (Complete + Exam-Ready)
+
+# 📌 Definition
+
+An **abstract class** is a class declared with the:
+
+```java id="m7q2wp"
+abstract
+```
+
+keyword.
+
+👉 It is used to achieve:
+
+```text id="x4m8vn"
+Partial abstraction
+```
+
+---
+
+# 🧠 Simple Meaning
+
+Abstract class is:
+
+```text id="p1q6wr"
+Incomplete class
+```
+
+that provides:
+
+* common properties
+* common methods
+
+but leaves some methods incomplete.
+
+---
+
+# 🔷 Syntax
+
+```java id="u9m3qx"
+abstract class ClassName {
+
+}
+```
+
+---
+
+# 🔷 Important Rules
+
+✔ Can contain:
+
+* Abstract methods
+* Normal methods
+* Variables
+* Constructors
+
+❌ Cannot create object directly
+
+---
+
+# 🔷 Abstract Method
+
+## 📌 Definition
+
+Method without body.
+
+---
+
+# 💻 Syntax
+
+```java id="r5q1vn"
+abstract void show();
+```
+
+---
+
+# 🔥 Example of Abstract Class
+
+```java id="w8m4zy"
+abstract class Animal {
+
+    abstract void sound();
+}
+
+class Dog extends Animal {
+
+    void sound() {
+
+        System.out.println("Dog barks");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="k2q7wr"
+Dog barks
+```
+
+---
+
+# 🧠 Understanding
+
+---
+
+# 🔹 Parent Class
+
+```java id="n6m1vp"
+abstract class Animal
+```
+
+Animal knows:
+
+```text id="t3q9vn"
+Animals make sound
+```
+
+BUT:
+
+```text id="v7m2qx"
+doesn't know exact sound
+```
+
+---
+
+# 🔹 Child Class
+
+```java id="p4q8wr"
+class Dog extends Animal
+```
+
+Provides actual implementation.
+
+---
+
+# 🔷 Can Abstract Class Have Normal Methods?
+
+✔ YES
+
+---
+
+# 💻 Example
+
+```java id="x1m6zy"
+abstract class Animal {
+
+    void eat() {
+
+        System.out.println("Animal eats");
+    }
+
+    abstract void sound();
+}
+```
+
+---
+
+# 🔷 Can Abstract Class Have Constructor?
+
+✔ YES
+
+---
+
+# 💻 Example
+
+```java id="m9q3vp"
+abstract class Animal {
+
+    Animal() {
+
+        System.out.println("Constructor Called");
+    }
+}
+```
+
+---
+
+# 🔷 Why Constructor Allowed?
+
+Because:
+
+```text id="u5m7wr"
+Child object creation initializes parent data
+```
+
+---
+
+# 🔷 Can We Create Object?
+
+❌ NO
+
+---
+
+# 💻 Invalid Example
+
+```java id="r2m8vn"
+Animal a = new Animal(); // ❌ Error
+```
+
+---
+
+# 🔷 Reference Variable Allowed
+
+✔ YES
+
+```java id="w6q1qx"
+Animal a = new Dog();
+```
+
+---
+
+# 🔷 If Child Does NOT Implement Abstract Method
+
+Then child class must also become:
+
+```java id="f4m9wr"
+abstract
+```
+
+---
+
+# 💻 Example
+
+```java id="k7q2vp"
+abstract class Animal {
+
+    abstract void sound();
+}
+
+abstract class Dog extends Animal {
+
+}
+```
+
+---
+
+# 🔷 Abstract Class with Multiple Methods
+
+```java id="p3m8zy"
+abstract class Shape {
+
+    abstract void area();
+
+    void display() {
+
+        System.out.println("Shape");
+    }
+}
+```
+
+---
+
+# 🔷 Real-Life Example
+
+---
+
+# 💻 Example
+
+```java id="x8q4wr"
+abstract class Vehicle {
+
+    abstract void start();
+
+    void stop() {
+
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+
+    void start() {
+
+        System.out.println("Car starts with key");
+    }
+}
+```
+
+---
+
+# 🔷 Abstract Class vs Normal Class
+
+| Feature          | Abstract Class | Normal Class |
+| ---------------- | -------------- | ------------ |
+| Object Creation  | ❌ No           | ✔ Yes        |
+| Abstract Methods | ✔ Yes          | ❌ No         |
+| Normal Methods   | ✔ Yes          | ✔ Yes        |
+
+---
+
+# 🔷 Abstract Class vs Interface
+
+| Feature              | Abstract Class | Interface            |
+| -------------------- | -------------- | -------------------- |
+| Abstraction          | Partial        | Full (traditionally) |
+| Constructor          | ✔ Yes          | ❌ No                 |
+| Multiple Inheritance | ❌              | ✔                    |
+| Variables            | Any type       | public static final  |
+
+---
+
+# 🔷 Important Keywords
+
+| Keyword  | Purpose                 |
+| -------- | ----------------------- |
+| abstract | Incomplete method/class |
+| extends  | Inherit abstract class  |
+
+---
+
+# 🔥 Key Points to Remember
+
+✔ Abstract class can contain constructor
+✔ Can contain normal methods
+✔ Cannot instantiate directly
+✔ Child class must implement abstract methods
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 An abstract class in Java is a class declared with the abstract keyword. It can contain abstract and normal methods and is used to achieve abstraction. Objects of abstract classes cannot be created directly.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Can abstract class have constructor?**
+✔ Yes
+
+👉 **2. Can abstract class have normal methods?**
+✔ Yes
+
+👉 **3. Can we create object?**
+❌ No
+
+👉 **4. Which keyword used for inheritance?**
+`extends`
+
+👉 **5. Why use abstract class?**
+To provide common structure and abstraction
+
+---
+
+# 💡 Pro Tip
+
+👉 Remember:
+
+```text id="y1m7qp"
+Abstract class = partially complete class
+```
+
+🔥 Most asked interview question:
+
+```text id="u4q8wr"
+Difference between abstract class and interface
+```
