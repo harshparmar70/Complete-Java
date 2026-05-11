@@ -1,0 +1,434 @@
+# 🔷 ArrayList in Java (Complete + Exam-Ready)
+
+# 📌 Definition
+
+`ArrayList` is a class in Java that provides a **dynamic array**.
+
+👉 Dynamic means:
+
+```text id="x1m7qp"
+Size can grow or shrink automatically
+```
+
+---
+
+# 🧠 Why ArrayList?
+
+Normal arrays:
+
+* Fixed size
+
+ArrayList:
+
+* Flexible size
+* Easy insertion/deletion
+
+---
+
+# 🔷 Package
+
+```java id="v4q8wr"
+import java.util.ArrayList;
+```
+
+---
+
+# 🔷 Syntax
+
+```java id="m9k2vn"
+ArrayList<Type> list = new ArrayList<>();
+```
+
+---
+
+# 💻 Example
+
+```java id="p6m1zy"
+import java.util.ArrayList;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("Java");
+        list.add("Python");
+
+        System.out.println(list);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="r3q7wp"
+[Java, Python]
+```
+
+---
+
+# 🔷 Important Methods of ArrayList
+
+---
+
+# 1️⃣ add()
+
+Adds element
+
+```java id="u8m4qx"
+list.add("C++");
+```
+
+---
+
+# 2️⃣ get()
+
+Access element
+
+```java id="n2q9wr"
+System.out.println(list.get(0));
+```
+
+---
+
+# 3️⃣ remove()
+
+Remove element
+
+```java id="f5m1vp"
+list.remove(1);
+```
+
+---
+
+# 4️⃣ size()
+
+Returns number of elements
+
+```java id="x7q3zy"
+System.out.println(list.size());
+```
+
+---
+
+# 5️⃣ set()
+
+Update element
+
+```java id="w1m6qp"
+list.set(0, "Java Programming");
+```
+
+---
+
+# 🔷 Full Example
+
+```java id="k4q8vn"
+import java.util.ArrayList;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("Java");
+        list.add("Python");
+        list.add("C");
+
+        System.out.println(list);
+
+        list.remove(1);
+
+        System.out.println(list);
+
+        System.out.println(list.get(0));
+
+        System.out.println(list.size());
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="y9m2wr"
+[Java, Python, C]
+[Java, C]
+Java
+2
+```
+
+---
+
+# 🔷 ArrayList Internal Working
+
+👉 Internally uses:
+
+```text id="t6m4qp"
+Resizable array
+```
+
+When capacity full:
+
+* New larger array created
+* Old data copied
+
+---
+
+# 🔷 Advantages
+
+✔ Dynamic size
+✔ Fast retrieval
+✔ Easy to use
+
+---
+
+# ⚠️ Disadvantages
+
+❌ Slow insertion/deletion in middle
+
+---
+
+# 🔷 Array vs ArrayList
+
+| Feature    | Array              | ArrayList    |
+| ---------- | ------------------ | ------------ |
+| Size       | Fixed              | Dynamic      |
+| Data Types | Primitive + Object | Objects only |
+| Methods    | ❌                  | ✔            |
+
+---
+
+# 🔷 HashMap in Java (VERY IMPORTANT 🔥)
+
+# 📌 Definition
+
+`HashMap` stores data in:
+
+```text id="c8q1vn"
+Key → Value pair
+```
+
+---
+
+# 🧠 Example
+
+```text id="m5k7wr"
+101 → Harsh
+102 → Raj
+```
+
+---
+
+# 🔷 Package
+
+```java id="u3m9qx"
+import java.util.HashMap;
+```
+
+---
+
+# 🔷 Syntax
+
+```java id="n7q2zy"
+HashMap<KeyType, ValueType> map = new HashMap<>();
+```
+
+---
+
+# 💻 Example
+
+```java id="f4m8wp"
+import java.util.HashMap;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(101, "Harsh");
+        map.put(102, "Raj");
+
+        System.out.println(map);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="x1m6vq"
+{101=Harsh, 102=Raj}
+```
+
+---
+
+# 🔷 Important Methods of HashMap
+
+---
+
+# 1️⃣ put()
+
+Insert key-value pair
+
+```java id="r5q9wr"
+map.put(103, "Amit");
+```
+
+---
+
+# 2️⃣ get()
+
+Retrieve value using key
+
+```java id="t8m2zy"
+System.out.println(map.get(101));
+```
+
+---
+
+# 3️⃣ remove()
+
+Delete pair
+
+```java id="v1q7vp"
+map.remove(102);
+```
+
+---
+
+# 4️⃣ containsKey()
+
+Check key exists
+
+```java id="p4m6wr"
+map.containsKey(101);
+```
+
+---
+
+# 5️⃣ size()
+
+Number of pairs
+
+```java id="w9q1qx"
+map.size();
+```
+
+---
+
+# 🔷 Full Example
+
+```java id="m2k8vn"
+import java.util.HashMap;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(101, "Harsh");
+        map.put(102, "Raj");
+        map.put(103, "Amit");
+
+        System.out.println(map);
+
+        System.out.println(map.get(101));
+
+        map.remove(102);
+
+        System.out.println(map);
+
+        System.out.println(map.containsKey(103));
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="q6m3wr"
+{101=Harsh, 102=Raj, 103=Amit}
+Harsh
+{101=Harsh, 103=Amit}
+true
+```
+
+---
+
+# 🔷 Important Characteristics of HashMap
+
+| Feature          | HashMap    |
+| ---------------- | ---------- |
+| Order Maintained | ❌ No       |
+| Duplicate Keys   | ❌ No       |
+| Duplicate Values | ✔ Yes      |
+| Null Key         | ✔ One      |
+| Null Values      | ✔ Multiple |
+
+---
+
+# 🔷 Internal Working
+
+HashMap uses:
+
+```text id="y7q4vn"
+Hashing
+```
+
+to store and retrieve data quickly.
+
+---
+
+# 🔷 ArrayList vs HashMap
+
+| Feature | ArrayList     | HashMap         |
+| ------- | ------------- | --------------- |
+| Stores  | Single values | Key-value pairs |
+| Access  | Index         | Key             |
+| Order   | Maintained    | Not guaranteed  |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 ArrayList is a dynamic array implementation in Java used to store ordered collections of objects. HashMap is a collection class used to store data in key-value pairs using hashing.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. Difference between Array and ArrayList?**
+Fixed vs dynamic size
+
+👉 **2. Does ArrayList allow duplicates?**
+✔ Yes
+
+👉 **3. Does HashMap allow duplicate keys?**
+❌ No
+
+👉 **4. What is HashMap used for?**
+Key-value storage
+
+👉 **5. Is HashMap ordered?**
+❌ No
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important interview topics:
+
+```text id="z3m8wp"
+ArrayList internal resizing  
+HashMap hashing mechanism
+```
