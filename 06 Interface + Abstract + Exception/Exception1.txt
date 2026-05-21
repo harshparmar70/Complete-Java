@@ -1,0 +1,426 @@
+# 🔷 Exception Handling in Java (Complete + Exam-Ready)
+
+# 📌 Definition
+
+An **Exception** is an unwanted event that occurs during program execution and interrupts normal flow of the program.
+
+---
+
+# 🧠 Simple Meaning
+
+```text id="x7m2qp"
+Runtime error
+```
+
+Example:
+
+* Divide by zero
+* Array index out of bounds
+* Null pointer
+
+---
+
+# 🔥 Example Without Exception Handling
+
+```java id="u4q8wr"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 0;
+
+        int c = a / b;
+
+        System.out.println(c);
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="m9k1vn"
+ArithmeticException
+```
+
+Program terminates abnormally.
+
+---
+
+# 🔷 Why Exception Handling Needed?
+
+✔ Prevent program crash
+✔ Maintain normal flow
+✔ Handle runtime problems gracefully
+
+---
+
+# 🔷 Exception Hierarchy
+
+```text id="p3m7zy"
+Object
+   |
+Throwable
+   |
+-------------------
+|                 |
+Error         Exception
+```
+
+---
+
+# 🔷 Types of Exceptions
+
+| Type                | Description             |
+| ------------------- | ----------------------- |
+| Checked Exception   | Checked at compile time |
+| Unchecked Exception | Occurs at runtime       |
+
+---
+
+# 🔷 Checked Exception
+
+Handled by compiler.
+
+Examples:
+
+* IOException
+* SQLException
+
+---
+
+# 🔷 Unchecked Exception
+
+Occurs during runtime.
+
+Examples:
+
+* ArithmeticException
+* NullPointerException
+* ArrayIndexOutOfBoundsException
+
+---
+
+# 🔷 try-catch Block
+
+---
+
+# 📌 Syntax
+
+```java id="r6q2wp"
+try {
+
+}
+catch(Exception e) {
+
+}
+```
+
+---
+
+# 💻 Example
+
+```java id="v1m8qx"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        try {
+
+            int a = 10;
+            int b = 0;
+
+            int c = a / b;
+
+            System.out.println(c);
+        }
+
+        catch (ArithmeticException e) {
+
+            System.out.println("Cannot divide by zero");
+        }
+
+        System.out.println("Program continues");
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="f4q9wr"
+Cannot divide by zero
+Program continues
+```
+
+---
+
+# 🧠 Understanding
+
+---
+
+# 🔹 try Block
+
+Contains risky code
+
+---
+
+# 🔹 catch Block
+
+Handles exception
+
+---
+
+# 🔹 Exception Object
+
+```java id="x8m2vn"
+ArithmeticException e
+```
+
+`e` stores exception details.
+
+---
+
+# 🔷 finally Block
+
+---
+
+# 📌 Definition
+
+`finally` block always executes.
+
+Used for:
+
+```text id="w5q7zy"
+Cleanup code
+```
+
+---
+
+# 💻 Example
+
+```java id="t2m6wr"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        try {
+
+            int x = 10 / 0;
+        }
+
+        catch (Exception e) {
+
+            System.out.println("Exception handled");
+        }
+
+        finally {
+
+            System.out.println("Finally block executed");
+        }
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="k4m8zy"
+Exception handled
+Finally block executed
+```
+
+---
+
+# 🔷 throw Keyword
+
+Used to manually create exception.
+
+---
+
+# 💻 Example
+
+```java id="r9q3wp"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        int age = 15;
+
+        if (age < 18) {
+
+            throw new ArithmeticException("Not eligible");
+        }
+    }
+}
+```
+
+---
+
+# 🔷 throws Keyword
+
+Used to declare exception.
+
+---
+
+# 💻 Example
+
+```java id="m1v7qx"
+import java.io.*;
+
+class Demo {
+
+    void readFile() throws IOException {
+
+    }
+}
+```
+
+---
+
+# 🔷 Difference Between throw and throws
+
+| throw                    | throws                    |
+| ------------------------ | ------------------------- |
+| Used to create exception | Used to declare exception |
+| Inside method            | In method signature       |
+
+---
+
+# 🔷 Multiple catch Blocks
+
+---
+
+# 💻 Example
+
+```java id="y6m2wr"
+try {
+
+    int arr[] = {1, 2, 3};
+
+    System.out.println(arr[5]);
+}
+
+catch (ArithmeticException e) {
+
+    System.out.println("Arithmetic Error");
+}
+
+catch (ArrayIndexOutOfBoundsException e) {
+
+    System.out.println("Array Error");
+}
+```
+
+---
+
+# 🔷 Common Exceptions
+
+| Exception                      | Cause                     |
+| ------------------------------ | ------------------------- |
+| ArithmeticException            | Divide by zero            |
+| NullPointerException           | Null object access        |
+| ArrayIndexOutOfBoundsException | Invalid array index       |
+| NumberFormatException          | Invalid number conversion |
+
+---
+
+# 🔷 User-Defined Exception
+
+---
+
+# 💻 Example
+
+```java id="u5m1zy"
+class InvalidAgeException extends Exception {
+
+    InvalidAgeException(String msg) {
+
+        super(msg);
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        int age = 15;
+
+        try {
+
+            if (age < 18) {
+
+                throw new InvalidAgeException("Invalid Age");
+            }
+        }
+
+        catch (InvalidAgeException e) {
+
+            System.out.println(e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="x7q4wr"
+Invalid Age
+```
+
+---
+
+# 🔷 Exception Handling Flow
+
+```text id="m2k8vn"
+try → exception occurs
+       ↓
+catch handles
+       ↓
+finally executes
+```
+
+---
+
+# 🔷 Important Keywords
+
+| Keyword | Purpose           |
+| ------- | ----------------- |
+| try     | Risky code        |
+| catch   | Handle exception  |
+| finally | Always executes   |
+| throw   | Create exception  |
+| throws  | Declare exception |
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 Exception handling in Java is a mechanism used to handle runtime errors so that the normal flow of the program can be maintained.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is exception?**
+Runtime abnormal event
+
+👉 **2. Difference between checked and unchecked?**
+Compile-time vs runtime
+
+👉 **3. Purpose of finally?**
+Cleanup code
+
+👉 **4. Difference between throw and throws?**
+Create vs declare exception
+
+👉 **5. Can try exist without catch?**
+✔ Yes, with finally
+
+---
