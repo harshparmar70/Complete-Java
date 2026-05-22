@@ -1,0 +1,511 @@
+# 🔷 Threads in Java (Complete + Deep Understanding)
+
+# 📌 Definition
+
+A **Thread** is the smallest unit of execution inside a process.
+
+👉 OR
+
+```text id="x7m2qp"
+A thread is a lightweight subprocess.
+```
+
+---
+
+# 🧠 Simple Meaning
+
+A thread allows:
+
+```text id="u4q8wr"
+Multiple tasks to run simultaneously
+```
+
+inside one program.
+
+---
+
+# 🔥 Real-Life Example
+
+In mobile phone:
+
+* Music playing 🎵
+* Download running ⬇
+* WhatsApp notifications 📩
+
+at same time.
+
+👉 Achieved using:
+
+```text id="m9k1vn"
+Threads
+```
+
+---
+
+# 🔷 Process vs Thread
+
+| Process         | Thread        |
+| --------------- | ------------- |
+| Heavyweight     | Lightweight   |
+| Separate memory | Shared memory |
+| Slower          | Faster        |
+
+---
+
+# 🔷 Why Threads Needed?
+
+✔ Multitasking
+✔ Better CPU utilization
+✔ Faster execution
+✔ Responsive applications
+
+---
+
+# 🔥 Examples of Thread Usage
+
+| Application | Thread Use         |
+| ----------- | ------------------ |
+| Browser     | Multiple tabs      |
+| Games       | Sound + graphics   |
+| IDE         | Typing + compiling |
+| Server      | Multiple users     |
+
+---
+
+# 🔷 Thread Lifecycle (VERY IMPORTANT)
+
+```text id="p3m7zy"
+New
+ ↓
+Runnable
+ ↓
+Running
+ ↓
+Blocked/Waiting
+ ↓
+Terminated
+```
+
+---
+
+# 🔷 1️⃣ New State
+
+Thread object created.
+
+```java id="r6q2wp"
+Thread t = new Thread();
+```
+
+---
+
+# 🔷 2️⃣ Runnable State
+
+After:
+
+```java id="v1m8qx"
+t.start();
+```
+
+Thread ready to run.
+
+---
+
+# 🔷 3️⃣ Running State
+
+CPU executes:
+
+```java id="f4q9wr"
+run()
+```
+
+method.
+
+---
+
+# 🔷 4️⃣ Blocked/Waiting State
+
+Thread waiting because of:
+
+* sleep()
+* waiting
+* resource lock
+
+---
+
+# 🔷 5️⃣ Terminated State
+
+Thread execution finished.
+
+---
+
+# 🔷 Ways to Create Thread
+
+Java provides:
+
+1. Extending Thread class
+2. Implementing Runnable interface
+
+---
+
+# 🔷 Method 1 → Extending Thread Class
+
+---
+
+# 💻 Example
+
+```java id="x8m2vn"
+class MyThread extends Thread {
+
+    public void run() {
+
+        System.out.println("Thread is running");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        MyThread t = new MyThread();
+
+        t.start();
+    }
+}
+```
+
+---
+
+# 👉 Output
+
+```text id="w5q7zy"
+Thread is running
+```
+
+---
+
+# 🧠 Important
+
+```java id="t2m6wr"
+start()
+```
+
+creates new thread internally.
+
+Then JVM calls:
+
+```java id="k4m8zy"
+run()
+```
+
+---
+
+# ⚠️ Difference Between start() and run()
+
+| start()            | run()              |
+| ------------------ | ------------------ |
+| Creates new thread | Normal method call |
+| Multithreading     | No multithreading  |
+
+---
+
+# 🔷 Method 2 → Runnable Interface (BEST PRACTICE)
+
+---
+
+# 💻 Example
+
+```java id="r9q3wp"
+class MyThread implements Runnable {
+
+    public void run() {
+
+        System.out.println("Thread running");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        MyThread obj = new MyThread();
+
+        Thread t = new Thread(obj);
+
+        t.start();
+    }
+}
+```
+
+---
+
+# 🔥 Why Runnable Better?
+
+Because Java supports:
+
+```text id="m1v7qx"
+Single inheritance
+```
+
+If class already extends another class:
+
+* Cannot extend Thread again
+
+Runnable solves this.
+
+---
+
+# 🔷 Multiple Threads Example
+
+---
+
+# 💻 Example
+
+```java id="y6m2wr"
+class A extends Thread {
+
+    public void run() {
+
+        for(int i=1; i<=5; i++) {
+
+            System.out.println("A: " + i);
+        }
+    }
+}
+
+class B extends Thread {
+
+    public void run() {
+
+        for(int i=1; i<=5; i++) {
+
+            System.out.println("B: " + i);
+        }
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        A t1 = new A();
+        B t2 = new B();
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+---
+
+# 🧠 Output Understanding
+
+Outputs may mix because:
+
+```text id="u5m1zy"
+Threads execute concurrently
+```
+
+---
+
+# 🔷 Thread Methods
+
+| Method    | Purpose             |
+| --------- | ------------------- |
+| start()   | Start thread        |
+| run()     | Thread code         |
+| sleep()   | Pause thread        |
+| join()    | Wait for thread     |
+| isAlive() | Check thread status |
+
+---
+
+# 🔷 sleep() Method
+
+Pauses thread temporarily.
+
+---
+
+# 💻 Example
+
+```java id="x7q4wr"
+Thread.sleep(1000);
+```
+
+👉 1000 ms = 1 second
+
+---
+
+# 🔷 join() Method
+
+One thread waits for another.
+
+---
+
+# 💻 Example
+
+```java id="m2k8vn"
+t1.join();
+```
+
+---
+
+# 🔷 Thread Priority
+
+Range:
+
+```text id="q6m3wr"
+1 to 10
+```
+
+---
+
+# 💻 Example
+
+```java id="y7q4vn"
+t.setPriority(10);
+```
+
+---
+
+# 🔷 Synchronization (VERY IMPORTANT)
+
+---
+
+# 📌 Problem
+
+Multiple threads accessing same resource can create:
+
+```text id="g1m8zy"
+Race condition
+```
+
+---
+
+# 💻 Example
+
+Suppose:
+
+* Two threads updating bank balance
+
+Wrong results possible.
+
+---
+
+# 🔷 Solution → synchronized
+
+---
+
+# 💻 Example
+
+```java id="r8q2vp"
+synchronized void display() {
+
+}
+```
+
+Only one thread allowed at a time.
+
+---
+
+# 🔷 Thread Scheduler
+
+JVM component deciding:
+
+```text id="t4m9wr"
+Which thread executes
+```
+
+---
+
+# 🔷 Daemon Thread
+
+Background service thread.
+
+Examples:
+
+* Garbage collector
+
+---
+
+# 🔷 Main Thread
+
+Every Java program starts with:
+
+```text id="u1q7vn"
+main thread
+```
+
+---
+
+# 🔥 Real-Life Example
+
+```text id="x5m3qp"
+WhatsApp:
+```
+
+| Task             | Thread |
+| ---------------- | ------ |
+| Sending messages | Thread |
+| Voice call       | Thread |
+| Notifications    | Thread |
+
+---
+
+# 🔷 Advantages of Multithreading
+
+✔ Faster execution
+✔ Better responsiveness
+✔ Resource sharing
+✔ Parallel tasks
+
+---
+
+# 🔷 Disadvantages
+
+❌ Complex debugging
+❌ Synchronization issues
+❌ Deadlocks possible
+
+---
+
+# 🎯 Exam Answer (Perfect)
+
+👉 A thread in Java is a lightweight subprocess used for concurrent execution of tasks. Java supports multithreading using the Thread class and Runnable interface.
+
+---
+
+# ❓ Viva Questions
+
+👉 **1. What is thread?**
+Lightweight subprocess
+
+👉 **2. Two ways to create thread?**
+Thread class and Runnable interface
+
+👉 **3. Difference between start() and run()?**
+New thread vs normal method
+
+👉 **4. Why synchronization needed?**
+Avoid race condition
+
+👉 **5. Which thread starts first in Java?**
+Main thread
+
+---
+
+# 💡 Pro Tip
+
+👉 Most important interview topics:
+
+* Thread lifecycle
+* Runnable vs Thread
+* Synchronization
+* Race condition
+* start() vs run()
+
+🔥 VERY important for:
+
+* Placements
+* Advanced Java
+* Backend development
